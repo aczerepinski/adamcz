@@ -1,46 +1,26 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
 	"log"
-	"time"
+	"net/http"
+
+	"github.com/aczerepinski/adamcz/src/blog"
+	"github.com/aczerepinski/adamcz/src/web"
 )
 
 func main() {
-	getPosts()
-}
-
-// Post is a post
-type Post struct {
-	Title string
-	Body  string
-	Date  time.Time
-	tags  []string
-}
-
-func getPosts() []Post {
-	var posts []Post
-	root := "./blog/"
-	files, err := ioutil.ReadDir(root)
+	techPosts, err := blog.InitializeRepository("./techPosts")
 	if err != nil {
-		log.Fatalf("unable to read files: %v", err)
+		log.Fatalf("no tech posts! %v", err)
 	}
 
-	for _, f := range files {
-		data, err := ioutil.ReadFile(fmt.Sprintf("%s%s", root, f.Name()))
-		if err != nil {
-			fmt.Printf("unable to read file: %v\n", err)
-			continue
-		}
-		post, _ := parsePost(data)
-		posts = append(posts, post)
+	musicPosts, err := blog.InitializeRepository("./musicPosts")
+	if err != nil {
+		log.Fatalf("no music posts! %v", err)
 	}
 
-	return posts
-}
-
-func parsePost(file []byte) (Post, error) {
-	fmt.Printf("file: %s\n", file)
-	return Post{}, nil
+	controller := web.NewController(techPosts, musicPosts)
+	http.Handle("/", controller)
+	port := ":3000"
+	http.ListenAndServe(port, nil)
 }

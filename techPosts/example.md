@@ -1,12 +1,12 @@
-*** TITLE ***
+*** title ***
 Example
 
-*** DATE ***
+*** date ***
 8/15/20
 
-*** TAGS ***
+*** tags ***
 Examples, Other Stuff
 
-*** BODY ***
+*** body ***
 This is the example body
 
