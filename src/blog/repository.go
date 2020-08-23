@@ -57,7 +57,7 @@ func (r *Repository) GetAll(page, perPage int) []*Post {
 // GetBySlug returns a single Post
 func (r *Repository) GetBySlug(slug string) (*Post, error) {
 	for _, p := range r.posts {
-		if p.slug == slug {
+		if p.Slug == slug {
 			return p, nil
 		}
 	}

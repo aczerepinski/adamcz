@@ -1,0 +1,22 @@
+{{ define "page" }}
+  <h1 class="index-title">{{ .PageTitle }}</h1>
+  {{ $prefix := .PathPrefix }}
+
+  <ul class="vertical-list">
+  {{ range .Posts }}
+    <li class="vertical-list__item">
+      <div class="row">
+        <a href="{{ $prefix }}{{ .Slug }}" class="blog-link">{{ .Title }}</a>
+        <div class="tags">
+          {{ range .Tags }}
+            <span class="tag {{ . }}">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      <div class="row summary">
+        {{ .Summary }}
+      </div>
+   </li> 
+  {{ end }}
+  </ul>
+{{ end }}
