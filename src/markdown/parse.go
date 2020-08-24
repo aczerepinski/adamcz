@@ -101,7 +101,7 @@ func convertLinks(md string) string {
 }
 
 func convertInlineCode(md string) string {
-	r := regexp.MustCompile("`([a-zA-Z0-9_@#:\\.\\[\\]\\(\\)\\{\\}]+)`")
+	r := regexp.MustCompile("`([a-zA-Z0-9_@#:\\s\\.\\[\\]\\(\\)\\{\\}]+)`")
 	return r.ReplaceAllString(md, `<code class="inline">$1</code>`)
 }
 

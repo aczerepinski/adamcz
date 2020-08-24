@@ -9,6 +9,7 @@ body {
 
   /* fonts */
   --ubuntu: 'Ubuntu', sans-serif;
+  --sourceCode: 'Source Code Pro', monospace;
 
   /* measurements */
   --navHeight: 4rem;
@@ -28,7 +29,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-  font: 400 1.4rem var(--ubuntu);
+  font: 400 1.8rem var(--ubuntu);
+  line-height: 1.6;
 }
 
 ul {
@@ -47,8 +49,17 @@ a:hover {
 
 .main {
   margin: var(--navHeight) auto;
-  max-width: 65rem;
+  max-width: 70rem;
   padding-top: 4rem;
+}
+
+main a {
+  border-bottom: 1px solid var(--forest);
+  text-transform: initial;
+}
+
+main a:hover {
+  border-bottom: 1px solid var(--blue);
 }
 
 .index-title {
@@ -190,13 +201,13 @@ a:hover {
 }
 
 .summary {
-  font: 400 1.3rem var(--ubuntu);
+  font: 400 1.6rem var(--ubuntu);
   text-transform: initial;
 }
 
 .blog-link {
   border-bottom: 1px solid var(--forest);
-  font-weight: 700;
+  font: 700 1.6rem var(--ubuntu);
 }
 
 .blog-link:hover {
@@ -209,9 +220,16 @@ a:hover {
   text-align: center;
 }
 
-code.hljs {
-  font: 400 1.4rem 'monospace';
-  margin: 0 1rem;
+pre {
+  font-family: var(--sourceCode);
+}
+
+code.hljs, code span {
+  font: 400 1.6rem var(--sourceCode);
+}
+
+code.inline {
+  background-color: var(--cream);
 }
 
 /*

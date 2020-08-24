@@ -28,6 +28,24 @@ func TestConvertLinks(t *testing.T) {
 	}
 }
 
+func TestConvertInlineCode(t *testing.T) {
+	t.Parallel()
+	tests := []struct {
+		input    string
+		expected string
+	}{
+		{"", ""},
+		{"hi", "hi"},
+		{"`mix phx.new`", `<code class="inline">mix phx.new</code>`},
+	}
+
+	for i, test := range tests {
+		if actual := convertInlineCode(test.input); actual != test.expected {
+			t.Errorf("%d: expected %s, got %s", i, test.expected, actual)
+		}
+	}
+}
+
 func TestConvertElement(t *testing.T) {
 	t.Parallel()
 	tests := []struct {

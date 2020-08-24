@@ -11,7 +11,7 @@ elixir, phoenix
 Configure an Elixir/Phoenix application to use legacy Rails database tables
 
 *** body ***
-Phoenix is a wonderful framework for building performant web applications, and the Phoenix community has created great tutorials that take you from `mix phx.new` all the way to deployment. However, tutorials generally focus on true greenfield work, where you have the luxury of following Phoenix’s conventions at every turn. In this post, I want to talk about introducing Phoenix into a real-world tech stack, where you are likely to leverage one or more existing databases. This will be a short post, because [ECTO](https://hexdocs.pm/ecto/Ecto.html) (and by extension Phoenix) have made the necessary workarounds pretty intuitive and straightforward.
+Phoenix is a wonderful framework for building performant web applications, and the Phoenix community has created great tutorials that take you from `mix phx.new` all the way to deployment. However, tutorials generally focus on true greenfield work, where you have the luxury of following Phoenix’s conventions at every turn. In this post, I want to talk about introducing Phoenix into a real-world tech stack, where you are likely to leverage one or more existing databases. This will be a short post, because [Ecto](https://hexdocs.pm/ecto/Ecto.html) (and by extension Phoenix) have made the necessary workarounds pretty intuitive and straightforward.
 
 ### CONNECTING TO YOUR DATABASE(S)
 
@@ -42,7 +42,7 @@ Also, make the corresponding updates in your environment specific configuration 
 
 ### Migrations
 
-Even though your database already exists, you’ll want migrations in your Phoenix project so that the tables can be used in your test environment. The first option is to leverage [MIX ECTO.DUMP](https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Dump.html) and [MIX ECTO.LOAD](https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Load.html) to re-create all tables in one fell swoop. This is an attractive option if you have a large number of tables that would be time consuming to document in individual migration files.
+Even though your database already exists, you’ll want migrations in your Phoenix project so that the tables can be used in your test environment. The first option is to leverage [mix ecto.dump](https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Dump.html) and [mix ecto.load](https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Load.html) to re-create all tables in one fell swoop. This is an attractive option if you have a large number of tables that would be time consuming to document in individual migration files.
 
 In my case, my application only needed to use a fraction of the existing tables, so dumping/loading all of them felt like overkill and manually migrating them wasn’t much of a burden. [CREATE IF NOT EXISTS](https://hexdocs.pm/ecto_sql/Ecto.Migration.html#create_if_not_exists/2) is the right tool for this job, since it will create the table in your test environment while not raising an error in production.
 
