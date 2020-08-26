@@ -20,7 +20,8 @@ I can tell you from experience that it's possible to write production Go code fo
 To that end, I'll be sharing five standard library interfaces with two primary goals in mind. First, to provide examples of how to interact with Go's existing interfaces, and second, to draw attention to the conventions of idiomatic interfaces (e.g. small, focused, and well-named). So let's get started!
 
 
-## STRINGER
+### Stringer
+
 ```go
 type Stringer interface {
     String() string
@@ -63,7 +64,7 @@ To take advantage of code generation, leave a comment like this where your Strin
 
 Another example Stringer implementation might be to represent a User as `fmt.Sprintf("%s %s", u.FirstName, u.LastName)`.
 
-## ERROR
+### Error
 
 If you've written more than 10 lines of Go, you're certainly familiar with functions that return errors. But you may not know that the built-in error type is actually an interface.
 
@@ -90,7 +91,8 @@ func (e IngredientUnavailable) Error() string {
 
 This struct can then be used as the `error` return value of any function, and can be passed directly to functions in the fmt package where it will be correctly formatted.
 
-## SORT.INTERFACE
+### Sort.Interface
+
 ```go
 type Interface interface {
     Len() int
@@ -111,10 +113,11 @@ func (a ByWeight) Less(i, j int) bool { return a[i].Weight < a[j].Weight }
 func (a ByWeight) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 
 ```
+
 With this interface fulfilled, you can sort slices like this... `sort.Sort(ByWeight(accordions))` ...in a way that is very succinct and easy to read. Under the hood, Sort will use different sorting algorithms depending on the size that your `Len()` function returns.
 
 
-## READER & WRITER
+### Reader & Writer
 
 Finally, let's kill two birds with one stone by heading to the `io` package, where over a dozen small, clearly-named interfaces are defined. We'll focus on `Reader` and `Writer` - meaning things that you can read bytes from or write bytes to.
 
@@ -127,6 +130,7 @@ type Writer interface {
     Write(p []byte) (n int, err error)
 }
 ```
+
 In many cases, you won't need to write your own `Reader`s and `Writer`s because the implementations that ship with Go already cover most use cases. Most user-defined implementations piggyback on those from the standard library and add a bit of functionality.
 
 A Reader example that you will find in most web applications is an http `Response.Body`. A common example of a Writer is a `json.Encoder`. An then you have examples like `os.File` that work as both a Reader and Writer (since you can both read from and write to files on your computer). In fact, File is a ReadWriter:
@@ -142,7 +146,7 @@ So what do you gain from knowing that there are Readers and Writers at play in G
 
 There are also a number of open source logging packages (such as [logrus](https://github.com/sirupsen/logrus)) that are `io.Writer`s that add functionality and play nice with the standard library (i.e. as the `ErrorLog` set on `http.Server{}`).
 
-## TAKEAWAYS
+### Takeaways
 
 Here are a few of the things that I'm hoping you'll take away from this post:
 
@@ -158,4 +162,6 @@ Here are a few of the things that I'm hoping you'll take away from this post:
 
 6. Small interfaces can be composed together, as seen in the ReadWriter example (or to take it one step further, in ReadWriteCloser).
 
-And that's all I've got for now. If you find any errors in this post or have any other feedback, feel free to reach out to me on Twitter. Thanks! -Adam
+And that's all I've got for now. If you find any errors in this post or have any other feedback, feel free to reach out to me on Twitter.
+
+Thanks! -Adam

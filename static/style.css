@@ -67,7 +67,6 @@ main a:hover {
   font: 700 2.5rem var(--ubuntu);
   margin-bottom: 3rem;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .show-title {
@@ -75,7 +74,6 @@ main a:hover {
   font: 700 2.5rem var(--ubuntu);
   margin-bottom: .5rem;
   text-align: center;
-  text-transform: uppercase; 
 }
 
 .show-meta {

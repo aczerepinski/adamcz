@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+const codeChars string = "[\\sa-zA-Z0-9/=~<>\\\\%\\-\\+\\*\\^`&?\\$\\|!'\"#:;_\\.,@\\[\\]\\(\\)\\{\\}]+"
+
 type parser struct {
 	char      byte
 	input     string
@@ -24,7 +26,6 @@ func (p *parser) parse(md string) []string {
 }
 
 func (p *parser) readElement() {
-	// p.skipWhitespace()
 	start := p.position
 
 	if start+2 < len(p.input) && p.isCodeDelimiter() {
@@ -62,10 +63,7 @@ func (p *parser) isParagraphDelimiter() bool {
 }
 
 func (p *parser) skipWhitespace() {
-	// for string(p.char) == " " || string(p.char) == "\t" {
-	fmt.Println("in skip func, p.char is", string(p.char))
 	for p.char == ' ' || p.char == '\t' || p.char == '\n' || p.char == '\r' {
-		fmt.Println("skipping")
 		p.readChar()
 	}
 }
@@ -89,24 +87,29 @@ func ToHTML(md string) string {
 
 	for _, e := range elements {
 		asTag := convertElement(e)
-		output = append(output, convertInlineCode(convertLinks(asTag)))
+		if strings.HasPrefix(e, "```") {
+			output = append(output, asTag)
+		} else {
+			output = append(output, convertInlineCode(convertLinks(asTag)))
+		}
 	}
 
 	return strings.Join(output, "")
 }
 
 func convertLinks(md string) string {
-	r := regexp.MustCompile(`(\[)([\w\s\.]+)(\])(\()([\.\/:a-zA-Z0-9#_]+)(\))`)
+	r := regexp.MustCompile(`(\[)([\w\s\-\.]+)(\])(\()([\.\/:a-zA-Z0-9#_\-]+)(\))`)
 	return r.ReplaceAllString(md, `<a href="$5">$2</a>`)
 }
 
 func convertInlineCode(md string) string {
-	r := regexp.MustCompile("`([a-zA-Z0-9_@#:\\s\\.\\[\\]\\(\\)\\{\\}]+)`")
+	inlineChars := strings.Replace(codeChars, "`", "", -1)
+	r := regexp.MustCompile(fmt.Sprintf("`(%s)`", inlineChars))
 	return r.ReplaceAllString(md, `<code class="inline">$1</code>`)
 }
 
 func convertElement(md string) string {
-	hTag := regexp.MustCompile(`(#+\s*)([\w\s\(\)\.]+)`)
+	hTag := regexp.MustCompile(`(#+\s*)([\w\s\(\)\.!:?\\+&]+)`)
 	if strings.HasPrefix(md, "###") {
 		return hTag.ReplaceAllString(md, "<h3>$2</h3>")
 	}
@@ -117,9 +120,13 @@ func convertElement(md string) string {
 		return hTag.ReplaceAllString(md, "<h1>$2</h1>")
 	}
 	if strings.HasPrefix(md, "```") {
-		code := regexp.MustCompile("(`{3})([a-z]+)\\n([\\sa-zA-Z/=\"#:_\\.,@\\[\\]\\(\\)\\{\\}]+)(`{3})")
-		return code.ReplaceAllString(md, `<pre><code class="$2">$3</code></pre>`)
+		code := regexp.MustCompile(fmt.Sprintf("(`{3})([a-z]+)\\n(%s)(`{3})", codeChars))
+		matches := code.FindStringSubmatch(md)
+		if len(matches) < 4 {
+			return md
+		}
+		content := strings.ReplaceAll(matches[3], "<", "&lt;")
+		return `<pre><code class="` + matches[2] + `">` + content + "</code></pre>"
 	}
-	// ```elixir def change do create_if_not_exists table(:avocados) do add :date_picked, :utc_datetime # etc... ```
 	return fmt.Sprintf("<p>%s</p>", md)
 }

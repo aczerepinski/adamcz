@@ -2,6 +2,7 @@ package blog
 
 import (
 	"fmt"
+	"regexp"
 	"strings"
 	"time"
 
@@ -35,18 +36,8 @@ func NewPost(raw map[string]string) *Post {
 		SoundCloudLink: raw["soundcloud"],
 		Composers:      cleanEmpty(strings.Split(raw["composers"], ", ")),
 		Performers:     cleanEmpty(strings.Split(raw["performers"], ", ")),
-		Slug:           strings.ReplaceAll(strings.ToLower(raw["title"]), " ", "-"),
+		Slug:           prepareSlug(raw["title"]),
 	}
-}
-
-func cleanEmpty(ss []string) []string {
-	var cleaned []string
-	for _, s := range ss {
-		if clean := strings.TrimSpace(s); clean != "" {
-			cleaned = append(cleaned, clean)
-		}
-	}
-	return cleaned
 }
 
 // Summary prepares a summary that is contextually appropriate for
@@ -60,8 +51,17 @@ func (p *Post) Summary() string {
 	return fmt.Sprintf("%s - %s", p.Date.Format("1/2/06"), p.Description)
 }
 
-// func (p *Post) MusicCredits() string {
-// 	return fmt.Sprintf("composed by %s, performed by %s",
-// 			strings.Join(p.Composers, ","),
-// 			strings.Join(p.Performers, ","))
-// }
+func cleanEmpty(ss []string) []string {
+	var cleaned []string
+	for _, s := range ss {
+		if clean := strings.TrimSpace(s); clean != "" {
+			cleaned = append(cleaned, clean)
+		}
+	}
+	return cleaned
+}
+
+func prepareSlug(title string) string {
+	justWords := regexp.MustCompile(`[^\w\s]`).ReplaceAllString(title, "")
+	return strings.ReplaceAll(strings.ToLower(justWords), " ", "-")
+}

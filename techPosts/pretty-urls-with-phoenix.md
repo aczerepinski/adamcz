@@ -57,6 +57,7 @@ defp create_a_slug(changeset) do
   end
 end
 ```
+
 With all that in place, head over to your router, and specify the new field that will serve as your param:
 
 ```elixir
@@ -64,6 +65,7 @@ resources "/blog", BlogController, only: [:index, ...], param: "slug"
 ```
 
 And then use that param to pull from your repository. Now that you'll be accessing posts by means other than their primary key, it's probably a good idea to add an index to slug. There's an example in the Ecto Migration documentation [here](https://hexdocs.pm/ecto/Ecto.Migration.html). You'll take a minor hit on insert speeds, but it will pay off every time someone hits the show action.
+
 ```elixir
 def show(conn, %("slug" => slug}) do
   post = Repo.get_by(Post, slug: slug)
@@ -72,10 +74,13 @@ def show(conn, %("slug" => slug}) do
     |> authenticate({})
 ...
 ```
+
 Finally, don't forget to update any links that might previously have referenced primary key:
+
 ```elixir
 <%= link "the link", to: blog_path(@conn, :show, post.slug) %>
 ```
+
 That's all for now! Like I said, please let me know if there is a more efficient way to do any of this (aczerepinski at google's email service). It's been a lot of fun writing a blog about building a blog, and using the blog to write the blog about the blog. 
 
 Thanks for reading!

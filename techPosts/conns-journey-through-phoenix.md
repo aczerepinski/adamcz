@@ -20,6 +20,7 @@ def halt(%Conn{} = conn) do
   %{conn | halted: true}
 end
 ```
+
 In other words, if conn's halted key is set to true, the rest of the pipeline won't touch it. Right after that, Plug.RequestId generates a unique ID for the request and sets conn's req_headers key accordingly. One of the next plug modules is Plug.MethodOverride, which takes an HTTP verb from a POST request's _method parameter and uses it to set conn's method key. Let's take a look:
 
 ```elixir
@@ -35,6 +36,7 @@ defp override_method(conn, body_params) do
   end
 end
 ```
+
 If the method from body_params pattern matches against the list of allowed methods, the method key is changed. Otherwise, conn is just returned. There are a few more "administrative" plugs like that and then finally...
 
 ```elixir
@@ -52,6 +54,7 @@ pipeline :browser do
     plug :put_secure_browser_headers
 end
 ```
+
 Those are the default plugs, and on this site there's also an auth plug in there to stop random folks from editing this blog. Hopefully it works and I really wrote all of this. Those plugs get added to conn's before_send key. The router also adds the blog post you requested to the params key and and the appropriate controller action to the private key:
 
 ```elixir
@@ -59,6 +62,7 @@ before_send: (all the plugs from pipeline :browser)
 params: %{"slug" => "conns-journey-through-phoenix"}
 private: %{:phoenix_action => :show, phoenix_controller => AdamczDotCom.BlogController, :phoenix_format => "html", etc.}
 ```
+
 Just as with any MVC framework, the Phoenix controller (which is of course a plug) asks the data layer for resources specific to this request. Then in the final step, it passes those resources to a render function as "assigns." For this page, "assigns" contains things I added like the blog post's title & body content, plus some things Phoenix added behind the scenes like the layout that wraps my blog template.
 
 ```elixir
@@ -67,6 +71,7 @@ def render(conn, template, assigns)
   send_resp(conn, conn.status || 200, content_type, data)
 end
 ```
+
 I'm glossing over how 'render' works because that's surely a blog post of its own. But at a high level it takes the completed conn, the blog template, the blog content, and hands a response to the very last plug, Plug.Conn.send_resp. And now you're looking at it.
 
 This approach of transforming a data structure through a series of functions until it contains a completed HTML string is both simple, and fast. It's also really flexible, since it is so easy to inject your own functions (provided they uphold the plug contract) at any point along the way, or halt and skip the rest of the stack. I'm having a lot of fun learning Phoenix, and gladly welcome feedback and/or corrections if I have any of the details wrong. Feel free to send me an email, aczerepinski at Google's email service.
