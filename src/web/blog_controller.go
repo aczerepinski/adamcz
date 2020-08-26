@@ -3,6 +3,7 @@ package web
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/aczerepinski/adamcz/src/blog"
 )
@@ -16,10 +17,12 @@ type blogIndex struct {
 }
 
 type blogShow struct {
-	Version   string
-	PageTitle string
-	MetaTitle string
-	Post      *blog.Post
+	Version      string
+	PageTitle    string
+	MetaTitle    string
+	Post         *blog.Post
+	PathPrefix   string
+	MoreLikeThis []*blog.Post
 }
 
 // musicIndex serves a summary of all music posts
@@ -38,7 +41,7 @@ func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
 func (c *Controller) techIndex(w http.ResponseWriter, r *http.Request) {
 	data := blogIndex{
 		Version:    c.version,
-		PageTitle:  "Blog",
+		PageTitle:  "Tech Blog",
 		MetaTitle:  "adamcz | blog",
 		PathPrefix: "/blog/",
 		Posts:      c.techPosts.GetAll(1, 10),
@@ -55,10 +58,12 @@ func (c *Controller) musicShow(slug string, w http.ResponseWriter, r *http.Reque
 	}
 
 	data := blogShow{
-		Version:   c.version,
-		PageTitle: post.Title,
-		MetaTitle: fmt.Sprintf("adamcz | %s", post.Title),
-		Post:      post,
+		Version:      c.version,
+		PageTitle:    post.Title,
+		MetaTitle:    fmt.Sprintf("adamcz | %s", strings.ToLower(post.Title)),
+		Post:         post,
+		PathPrefix:   "/music/",
+		MoreLikeThis: c.musicPosts.GetRelateds(post, 3),
 	}
 
 	c.templates["blogShow"].Execute(w, data)
@@ -73,10 +78,12 @@ func (c *Controller) techShow(slug string, w http.ResponseWriter, r *http.Reques
 	}
 
 	data := blogShow{
-		Version:   c.version,
-		PageTitle: post.Title,
-		MetaTitle: fmt.Sprintf("adamcz | %s", post.Title),
-		Post:      post,
+		Version:      c.version,
+		PageTitle:    post.Title,
+		MetaTitle:    fmt.Sprintf("adamcz | %s", strings.ToLower(post.Title)),
+		Post:         post,
+		PathPrefix:   "/blog/",
+		MoreLikeThis: c.techPosts.GetRelateds(post, 3),
 	}
 
 	c.templates["blogShow"].Execute(w, data)

@@ -218,6 +218,40 @@ main a:hover {
   text-align: center;
 }
 
+.list-heading {
+  font: 700 1.6rem var(--ubuntu);
+  margin-top: 4rem;
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.card {
+  align-items: center;
+  border: 2px solid var(--forest);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-right: 1rem;
+  max-width: 30rem;
+  padding: 1rem;
+}
+
+.card__title {
+  font: 400 1.2rem var(--ubuntu);
+}
+
+.card__tags {
+  margin-top: 1rem;
+}
+
+.card:hover {
+  border: 2px solid var(--blue);
+}
+
 pre {
   font-family: var(--sourceCode);
 }

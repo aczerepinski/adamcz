@@ -63,3 +63,34 @@ func (r *Repository) GetBySlug(slug string) (*Post, error) {
 	}
 	return nil, fmt.Errorf("not found")
 }
+
+// GetRelateds returns posts containing overlapping tags
+func (r *Repository) GetRelateds(p *Post, quantity int) []*Post {
+	var results []*Post
+	for _, requestedTag := range p.Tags {
+		for _, post := range r.posts {
+			if p == post {
+				continue
+			}
+			for _, tag := range post.Tags {
+				if tag == requestedTag && !contains(results, post) {
+					results = append(results, post)
+					if len(results) == quantity {
+						return results
+					}
+				}
+			}
+		}
+	}
+
+	return results
+}
+
+func contains(posts []*Post, p *Post) bool {
+	for _, post := range posts {
+		if p.Title == post.Title {
+			return true
+		}
+	}
+	return false
+}

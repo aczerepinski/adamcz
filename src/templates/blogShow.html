@@ -18,4 +18,21 @@
   {{ end }}
 
   {{ .Post.Body }}
+
+  {{ if .MoreLikeThis }}
+  <h5 class="list-heading">More Posts Like This:</h5>
+  <div class="card-list">
+    {{ $prefix := .PathPrefix }}
+    {{ range .MoreLikeThis }}
+    <a href="{{ $prefix }}{{ .Slug }}" class="card">
+      <div class="card__title">{{ .Title }}</div>
+      <div class="card__tags tags">
+        {{ range .Tags }}
+        <span class="tag {{ . }}">{{ . }}</span>
+        {{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
 {{ end }}
