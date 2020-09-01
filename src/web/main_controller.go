@@ -35,8 +35,8 @@ func (c *Controller) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		c.musicRouter(w, r)
 	case "blog":
 		c.techRouter(w, r)
-		// case "assets":
-		// 	c.staticHandler(w, r)
+	default:
+		c.pageHandler(head, w, r)
 	}
 }
 
@@ -62,10 +62,19 @@ func (c *Controller) techRouter(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// func (c *Controller) staticHander(w http.ResponseWriter, r *http.Request) {
-// 	asset, _ := popFromPath(r.URL.Path)
+func (c *Controller) pageHandler(slug string, w http.ResponseWriter, r *http.Request) {
+	type PageData struct {
+		Version   string
+		MetaTitle string
+	}
 
-// }
+	switch slug {
+	case "resume":
+		c.templates["resume"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz | resume"})
+	case "":
+		c.templates["home"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz"})
+	}
+}
 
 func (c *Controller) notFound(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "404")
@@ -92,8 +101,16 @@ func initTemplates() map[string]*template.Template {
 	blogShow := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sblogShow.html", root)))
 
+	resume := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sresume.html", root)))
+
+	home := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%shome.html", root)))
+
 	return map[string]*template.Template{
 		"blogIndex": blogIndex,
 		"blogShow":  blogShow,
+		"home":      home,
+		"resume":    resume,
 	}
 }

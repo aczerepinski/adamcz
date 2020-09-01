@@ -27,8 +27,6 @@ Gear used:
 
 Each instrument was recorded live in one take. I also did a rough recording before filming so that I'd have something to play along with.
 
-Please support my YouTube channel by liking & subscribing.
-
-Thanks!
+Thanks for listening!
 
 -Adam
