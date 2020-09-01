@@ -11,32 +11,32 @@ import (
 
 // Post represents a Blog or Music post
 type Post struct {
-	Title          string
-	Date           time.Time
-	Description    string
-	Body           string
-	Tags           []string
-	YouTubeLink    string
-	SoundCloudLink string
-	Composers      []string
-	Performers     []string
-	Slug           string
+	Title        string
+	Date         time.Time
+	Description  string
+	Body         string
+	Tags         []string
+	YouTubeLink  string
+	SoundCloudID string
+	Composers    []string
+	Performers   []string
+	Slug         string
 }
 
 // NewPost initializes a post from raw key/value pairs
 func NewPost(raw map[string]string) *Post {
 	date, _ := time.Parse("1/2/06", raw["date"])
 	return &Post{
-		Title:          raw["title"],
-		Date:           date,
-		Description:    raw["description"],
-		Body:           markdown.ToHTML(raw["body"]),
-		Tags:           strings.Split(raw["tags"], ", "),
-		YouTubeLink:    strings.Replace(raw["youtube"], "/watch?v=", "/embed/", 1),
-		SoundCloudLink: raw["soundcloud"],
-		Composers:      cleanEmpty(strings.Split(raw["composers"], ", ")),
-		Performers:     cleanEmpty(strings.Split(raw["performers"], ", ")),
-		Slug:           prepareSlug(raw["title"]),
+		Title:        raw["title"],
+		Date:         date,
+		Description:  raw["description"],
+		Body:         markdown.ToHTML(raw["body"]),
+		Tags:         strings.Split(raw["tags"], ", "),
+		YouTubeLink:  strings.Replace(raw["youtube"], "/watch?v=", "/embed/", 1),
+		SoundCloudID: raw["soundcloud"],
+		Composers:    cleanEmpty(strings.Split(raw["composers"], ", ")),
+		Performers:   cleanEmpty(strings.Split(raw["performers"], ", ")),
+		Slug:         prepareSlug(raw["title"]),
 	}
 }
 
