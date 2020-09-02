@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"github.com/aczerepinski/adamcz/src/blog"
@@ -29,7 +30,11 @@ func main() {
 	controller := web.NewController(version, techPosts, musicPosts)
 	http.Handle("/", controller)
 
-	port := ":3000"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	fmt.Printf("version %s deployed\nlistening on port %s", version, port)
-	http.ListenAndServe(port, nil)
+	http.ListenAndServe(":"+port, nil)
 }
