@@ -24,7 +24,7 @@ func TestNewPost(t *testing.T) {
 		t.Errorf("expected 2 tags, got %d", len(post.Tags))
 	}
 
-	if post.Body != "This is the example body" {
-		t.Errorf("expected body to be 'This is the example body', got %s", post.Body)
+	if post.Body != "<p>This is the example body</p>" {
+		t.Errorf("expected body to be '<p>This is the example body</p>', got %s", post.Body)
 	}
 }
