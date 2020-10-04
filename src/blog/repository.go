@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 	"sort"
 	"strings"
+
+	"github.com/aczerepinski/adamcz/src/markdown"
 )
 
 // Repository gives read access to blog posts
@@ -34,7 +36,7 @@ func InitializeRepository(root string) (*Repository, error) {
 			continue
 		}
 
-		raw := ParseFile(data)
+		raw := markdown.ParseFile(data)
 		r.posts = append(r.posts, NewPost(raw))
 	}
 
