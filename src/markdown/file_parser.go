@@ -1,14 +1,14 @@
-package blog
+package markdown
 
 import (
 	"strings"
 )
 
-// DELIMITER should be placed immediately before and offer a key,
+// DELIMITER should be placed immediately before and after a key,
 // such as *** title ***
 const DELIMITER string = "***"
 
-type parser struct {
+type fileParser struct {
 	input      string
 	position   int
 	char       byte
@@ -16,8 +16,8 @@ type parser struct {
 	parsed     map[string]string
 }
 
-func newParser(file []byte) *parser {
-	return &parser{
+func newFileParser(file []byte) *fileParser {
+	return &fileParser{
 		input:  string(file),
 		parsed: map[string]string{},
 	}
@@ -31,7 +31,7 @@ func newParser(file []byte) *parser {
 //
 // The above will be converted into {"title": "This is the title"}
 func ParseFile(file []byte) map[string]string {
-	p := newParser(file)
+	p := newFileParser(file)
 	for p.position < len(p.input) {
 		p.readKey()
 		p.readValue()
@@ -39,17 +39,17 @@ func ParseFile(file []byte) map[string]string {
 	return p.parsed
 }
 
-func (p *parser) readKey() {
+func (p *fileParser) readKey() {
 	p.readDelimiter()
 	p.currentKey = p.readText()
 	p.readDelimiter()
 }
 
-func (p *parser) readValue() {
+func (p *fileParser) readValue() {
 	p.parsed[p.currentKey] = p.readText()
 }
 
-func (p *parser) readText() string {
+func (p *fileParser) readText() string {
 	position := p.position
 	for p.position < len(p.input) && (p.almostDone() || !p.isDelimiter()) {
 		p.readChar()
@@ -57,20 +57,20 @@ func (p *parser) readText() string {
 	return strings.TrimSpace(p.input[position:p.position])
 }
 
-func (p *parser) isDelimiter() bool {
+func (p *fileParser) isDelimiter() bool {
 	peekUntil := p.position + len(DELIMITER)
 	return string(p.input[p.position:peekUntil]) == DELIMITER
 }
 
-func (p *parser) almostDone() bool {
+func (p *fileParser) almostDone() bool {
 	return len(p.input)-p.position < len(DELIMITER)
 }
 
-func (p *parser) readDelimiter() {
+func (p *fileParser) readDelimiter() {
 	p.position = p.position + len(DELIMITER)
 }
 
-func (p *parser) readChar() {
+func (p *fileParser) readChar() {
 	if p.position == len(p.input) {
 		p.char = 0
 	} else {
