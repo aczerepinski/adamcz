@@ -47,6 +47,10 @@ a:hover {
   color: var(--blue);
 }
 
+.contact-info {
+  display: none;
+}
+
 .main {
   margin: var(--navHeight) auto;
   max-width: 70rem;
@@ -208,6 +212,10 @@ main a:hover {
   background-color: #b16554;
 }
 
+.tag.drums {
+  background-color: #3f2f1a;
+}
+
 .tag.flugelhorn {
   background-color: #9a968f;
 }
@@ -316,7 +324,13 @@ main a:hover {
 }
 
 .card__tags {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 1rem;
+}
+
+.card__tags .tag {
+  margin-top: 0.25rem;
 }
 
 .card:hover {
@@ -431,5 +445,38 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
     font-size: 0.8rem;
     margin-right: 0.1rem;
     padding: 0.2rem;
+  }
+}
+
+@media print {
+  * {
+    color: black !important;
+  }
+
+  nav.nav {
+    display: none;
+  }
+
+  main.main {
+    padding-top: initial;
+  }
+
+  .resume h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contact-info {
+    display: flex;
+    font: 700 2.5rem var(--ubuntu);
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info:last-of-type {
+    margin-bottom: 2rem;
+  }
+
+  .contact-info span:nth-child(even) {
+    display: none;
   }
 }
