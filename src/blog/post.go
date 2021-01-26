@@ -43,12 +43,23 @@ func NewPost(raw map[string]string) *Post {
 // Summary prepares a summary that is contextually appropriate for
 // music or tech blog posts
 func (p *Post) Summary() string {
+	if p.performedByComposer() {
+		return fmt.Sprintf("%s - composed and performed by %s",
+			p.Date.Format("1/2/06"), p.Composers[0])
+	}
+
 	if len(p.Composers) > 0 {
-		return fmt.Sprintf("Recorded %s, composed by %s, performed by %s",
+		return fmt.Sprintf("%s - composed by %s, performed by %s",
 			p.Date.Format("1/2/06"), strings.Join(p.Composers, ","),
 			strings.Join(p.Performers, ","))
 	}
 	return fmt.Sprintf("%s - %s", p.Date.Format("1/2/06"), p.Description)
+}
+
+func (p *Post) performedByComposer() bool {
+	return len(p.Composers) == 1 &&
+		len(p.Performers) == 1 &&
+		p.Composers[0] == p.Performers[0]
 }
 
 func cleanEmpty(ss []string) []string {
