@@ -20,6 +20,7 @@ piano, bass
 Chick Corea has always been one of my favorite piano players, and he's also an amazing composer. This song is from his first album - recorded in his 20's, and already he was writing tunes that will be played forever.
 
 Gear used:
+
 - Fodera Monarch P bass, recorded through an Aguilar Tonehammer 500 amp
 
 - Estonia 190 Piano
