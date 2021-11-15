@@ -50,8 +50,8 @@ func (p *Post) Summary() string {
 
 	if len(p.Composers) > 0 {
 		return fmt.Sprintf("%s - composed by %s, performed by %s",
-			p.Date.Format("1/2/06"), strings.Join(p.Composers, ","),
-			strings.Join(p.Performers, ","))
+			p.Date.Format("1/2/06"), strings.Join(p.Composers, ", "),
+			strings.Join(p.Performers, ", "))
 	}
 	return fmt.Sprintf("%s - %s", p.Date.Format("1/2/06"), p.Description)
 }
