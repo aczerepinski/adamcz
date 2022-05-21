@@ -23,7 +23,8 @@ html, div, span, input, textarea {
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   color: var(--grey);
-  font: 600 2rem var(--oswald);
+  font: 600 3rem var(--oswald);
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -60,6 +61,27 @@ a:hover {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+}
+
+.bio {
+  display: flex;
+  padding-top: 2rem;
+}
+
+@media(max-width: 800px) {
+  .bio {
+    align-items: center;
+    flex-direction: column;
+  }
+  .bio picture {
+    height: auto;
+    width: 300px;
+  }
+}
+
+article {
+  padding: 1rem;
+  text-align: center;
 }
 
 .resume h1 {

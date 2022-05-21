@@ -71,6 +71,8 @@ func (c *Controller) pageHandler(slug string, w http.ResponseWriter, r *http.Req
 	switch slug {
 	case "resume":
 		c.templates["resume"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz | resume"})
+	case "bio":
+		c.templates["bio"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz | bio"})
 	case "":
 		c.templates["home"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz"})
 	}
@@ -95,6 +97,9 @@ func popFromPath(p string) (head, tail string) {
 
 func initTemplates() map[string]*template.Template {
 	root := "./src/templates/"
+	bio := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sbio.html", root)))
+
 	blogIndex := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sblogIndex.html", root)))
 
@@ -108,6 +113,7 @@ func initTemplates() map[string]*template.Template {
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%shome.html", root)))
 
 	return map[string]*template.Template{
+		"bio":       bio,
 		"blogIndex": blogIndex,
 		"blogShow":  blogShow,
 		"home":      home,
