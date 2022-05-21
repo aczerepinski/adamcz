@@ -17,16 +17,6 @@ type Controller struct {
 	version    string
 }
 
-// PageData provides variables for interpolation into templates
-type PageData struct {
-	Version   string
-	MetaTitle string
-}
-
-func (pd PageData) CDNHost() string {
-	return "https://adamcz.mo.cloudinary.net"
-}
-
 // NewController returns an initialized controller
 func NewController(version string, techPosts, musicPosts *blog.Repository) *Controller {
 	return &Controller{
@@ -73,13 +63,20 @@ func (c *Controller) techRouter(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *Controller) pageHandler(slug string, w http.ResponseWriter, r *http.Request) {
+	// PageData provides variables for interpolation into templates
+	type PageData struct {
+		Version   string
+		MetaTitle string
+		CDN       string
+	}
+
 	switch slug {
 	case "resume":
-		c.templates["resume"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz | resume"})
+		c.templates["resume"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz | resume"})
 	case "bio":
-		c.templates["bio"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz | bio"})
+		c.templates["bio"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz | bio"})
 	case "":
-		c.templates["home"].Execute(w, PageData{Version: c.version, MetaTitle: "adamcz"})
+		c.templates["home"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz"})
 	}
 }
 

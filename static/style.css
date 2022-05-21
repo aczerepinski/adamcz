@@ -391,7 +391,7 @@ code.inline {
 
 @media(max-width: 400px) {
   .image--landscape {
-    max-width: 300px;
+    max-width: 200px;
   }
 }
 
