@@ -14,7 +14,7 @@ Adam Czerepinski
 https://www.youtube.com/watch?v=rSbPyrBBrOU
 
 *** tags ***
-rhodes, prophet, bass, drums, flugelhorn
+rhodes, prophet, bass, drums, trumpet
 
 *** body ***
 Composed and performed by Adam Czerepinski
