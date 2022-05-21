@@ -1,18 +1,16 @@
 body {
   /* colors */
-  --blue: #0077c0;
-  --cream: #eee1c6;
-  --forest: #00471b;
-  --red: #bc2e18;
-  --grey: #666;
-  --lightGrey: #888;
+  --gold: #dfbe7d;
+  --grey: #333;
+  --legaleseGrey: #aaa;
+  --lightGrey: #efefef;
 
   /* fonts */
-  --ubuntu: 'Ubuntu', sans-serif;
-  --sourceCode: 'Source Code Pro', monospace;
+  --oswald: 'Oswald', sans-serif;
+  --slabo: 'Slabo 27px', serif;
 
   /* measurements */
-  --navHeight: 4rem;
+  --navHeight: 5rem;
 }
 
 html, div, span, input, textarea {
@@ -24,12 +22,14 @@ html, div, span, input, textarea {
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
-  color: var(--forest);
-  font: 700 2rem var(--ubuntu);
+  color: var(--grey);
+  font: 600 3rem var(--oswald);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 p {
-  font: 400 1.8rem var(--ubuntu);
+  font: 400 1.8rem var(--slabo);
   line-height: 1.6;
 }
 
@@ -39,12 +39,12 @@ ul {
 }
 
 a {
-  color: var(--forest);
+  color: var(--grey);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--blue);
+  color: var(--gold);
 }
 
 .contact-info {
@@ -53,61 +53,39 @@ a:hover {
 
 .main {
   margin: var(--navHeight) auto;
-  max-width: 70rem;
-  padding-top: 4rem;
-}
-
-main a {
-  border-bottom: 1px solid var(--forest);
-  text-transform: initial;
-}
-
-main a:hover {
-  border-bottom: 1px solid var(--blue);
+  max-width: 80rem;
+  padding-top: 2rem;
 }
 
 .home {
-  padding-top: 6rem;
-}
-
-.home h1 {
-  color: var(--blue);
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.home h2 {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.social-icons {
-  align-items: center;
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
 }
 
-.social-icons a {
-  border: none;
-  margin: 0 10px;
+.bio {
+  display: flex;
+  padding-top: 2rem;
 }
 
-.social-icons a:hover {
-  border: none;
+@media(max-width: 800px) {
+  .bio {
+    align-items: center;
+    flex-direction: column;
+  }
+  .bio picture {
+    height: auto;
+    width: 300px;
+  }
 }
 
-.social-icons svg {
-  fill: var(--forest);
-  height: 20px;
-}
-
-.social-icons a:hover svg {
-  fill: var(--blue);
+article {
+  padding: 1rem;
+  text-align: center;
 }
 
 .resume h1 {
-  color: var(--blue);
+  color: var(--grey);
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -120,7 +98,7 @@ main a:hover {
 }
 
 .resume h4 {
-  color: var(--blue);
+  color: var(--grey);
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -128,7 +106,7 @@ main a:hover {
 
 .resume h5 {
   color: black;
-  font: 400 1.7rem var(--ubuntu);
+  font: 400 1.7rem var(--oswald);
   margin-bottom: 1rem;
 }
 
@@ -138,15 +116,16 @@ main a:hover {
 }
 
 .index-title {
-  color: var(--forest);
-  font: 700 2.5rem var(--ubuntu);
+  color: var(--grey);
+  font: 600 3rem var(--oswald);
   margin-bottom: 3rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .show-title {
-  color: var(--forest);
-  font: 700 2.5rem var(--ubuntu);
+  color: var(--grey);
+  font: 700 3rem var(--oswald);
   margin-bottom: .5rem;
   text-align: center;
 }
@@ -175,9 +154,10 @@ main a:hover {
 }
 
 .tag {
-  background-color: var(--forest);
+  background-color: var(--grey);
   color: white;
-  font: 400 1rem var(--ubuntu);
+  font: 300 1rem var(--oswald);
+  letter-spacing: 1px;
   margin-right: .5rem;
   padding: .4rem;
   position: relative;
@@ -221,16 +201,28 @@ main a:hover {
 }
 
 .tag.trumpet {
-  background-color: #dfbe7d;
+  background-color: var(--gold);
+}
+
+.logo--square {
+  display: flex;
+  height: 100%;
+  width: auto;
+}
+
+.logo--square img {
+  height: 100%;
+  width: auto;
 }
 
 .nav {
-  background-color: var(--cream);
-  border-bottom: 2px solid var(--forest);
+  background-color: var(--lightGrey);
+  border-bottom: 2px solid var(--grey);
   display: flex;
   height: var(--navHeight);
   justify-content: space-between;
   left: 0;
+  padding: 0.25rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -240,12 +232,12 @@ main a:hover {
 .nav__links, .nav__logo {
   align-items: center;
   display: flex;
-  flex-basis: 66%;
+  flex-basis: 75%;
   justify-content: flex-end;
 }
 
 .nav__links a, .nav__logo {
-    font: 700 1.4rem var(--ubuntu);
+    font: 600 2rem var(--oswald);
     margin-right: 2rem;
     text-transform: uppercase;
     transition: .1s ease-in-out;
@@ -254,14 +246,10 @@ main a:hover {
 .nav__logo {
   align-items: center;
   display: flex;
-  flex-basis: 33%;
+  flex-basis: 25%;
   justify-content: flex-start;
+  max-width: 25%;
   text-transform: uppercase;
-}
-
-.nav__logo a {
-  font: 700 1.4rem var(--ubuntu);
-  margin-left: 2rem;
 }
 
 .vertical-list__item {
@@ -278,17 +266,18 @@ main a:hover {
 }
 
 .summary {
-  font: 400 1.6rem var(--ubuntu);
+  font: 300 1.6rem var(--slabo);
   text-transform: initial;
 }
 
 .blog-link {
-  border-bottom: 1px solid var(--forest);
-  font: 700 1.6rem var(--ubuntu);
+  border-bottom: 1px solid var(--grey);
+  font: 600 1.4rem var(--oswald);
+  text-transform: uppercase;
 }
 
 .blog-link:hover {
-  border-bottom: 1px solid var(--blue);
+  border-bottom: 1px solid var(--gold);
 }
 
 .youtube-embed {
@@ -298,7 +287,7 @@ main a:hover {
 }
 
 .list-heading {
-  font: 700 1.6rem var(--ubuntu);
+  font: 700 1.6rem var(--oswald);
   margin-top: 4rem;
 }
 
@@ -310,7 +299,7 @@ main a:hover {
 
 .card {
   align-items: center;
-  border: 2px solid var(--forest);
+  border: 2px solid var(--lightGrey);
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -320,7 +309,8 @@ main a:hover {
 }
 
 .card__title {
-  font: 400 1.2rem var(--ubuntu);
+  font: 400 1.2rem var(--oswald);
+  text-transform: uppercase;
 }
 
 .card__tags {
@@ -334,7 +324,7 @@ main a:hover {
 }
 
 .card:hover {
-  border: 2px solid var(--blue);
+  border: 2px solid var(--grey);
 }
 
 pre {
@@ -348,6 +338,70 @@ code.hljs, code span {
 code.inline {
   background-color: var(--cream);
 }
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-title {
+  color: var(--grey);
+  font: 600 4rem var(--oswald);
+  line-height: 3rem;
+  margin-bottom: .3rem;
+  text-transform: uppercase;
+}
+
+.image-subtitle {
+  color: var(--grey);
+  font: 300 2rem var(--oswald);
+  text-transform: uppercase;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+}
+
+.image::after {
+  content: 'Photo Credit: ' attr(data-photo-credit);
+  color: var(--legaleseGrey);
+  font: 300 1.2rem var(--oswald);
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.image--portrait {
+  height: 600px;
+}
+
+.image--landscape {
+  width: 800px;
+}
+
+.image--portrait img {
+  height: 100%;
+  width: auto;
+}
+
+.image--landscape img {
+  height: auto;
+  width: 100%;
+}
+
+@media(max-width: 400px) {
+  .image--landscape {
+    max-width: 300px;
+  }
+}
+
+@media(max-width: 800px) {
+  .image--landscape {
+    max-width: 500px;
+  }
+}
+
+
 
 /*
 Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>

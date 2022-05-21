@@ -4,8 +4,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro|Oswald -->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Source+Code+Pro" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css?v={{ .Version }}" type="text/css">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
@@ -18,17 +19,18 @@
   <body>
     <nav class="nav">
       <div class="nav__logo">
-        <a href="/">Adam Czerepinski</a>
+        <a class="logo--square" href="/">
+          <picture>
+            <img src="/static/images/logo_512.png" alt="adam czerepinski three instrument logo">
+          </picture>
+        </a>
       </div>
       <div class="nav__links">
-        <a href="/resume">
-          Resume
+        <a href="/bio">
+          About
         </a>
         <a href="/music">
           Music
-        </a>
-        <a href="/blog">
-          Tech
         </a>
       </div>
     </nav>
