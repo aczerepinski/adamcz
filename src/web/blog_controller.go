@@ -9,6 +9,7 @@ import (
 )
 
 type blogIndex struct {
+	CDN        string
 	Version    string
 	PageTitle  string
 	MetaTitle  string
@@ -17,6 +18,7 @@ type blogIndex struct {
 }
 
 type blogShow struct {
+	CDN          string
 	Version      string
 	PageTitle    string
 	MetaTitle    string
@@ -28,6 +30,7 @@ type blogShow struct {
 // musicIndex serves a summary of all music posts
 func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
 	data := blogIndex{
+		CDN:        cdnHost,
 		Version:    c.version,
 		PageTitle:  "Music",
 		MetaTitle:  "adamcz | music",
@@ -40,6 +43,7 @@ func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
 // techIndex serves a summary of all music posts
 func (c *Controller) techIndex(w http.ResponseWriter, r *http.Request) {
 	data := blogIndex{
+		CDN:        cdnHost,
 		Version:    c.version,
 		PageTitle:  "Tech Blog",
 		MetaTitle:  "adamcz | blog",
