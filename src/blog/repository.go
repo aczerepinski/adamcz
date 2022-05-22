@@ -68,24 +68,34 @@ func (r *Repository) GetBySlug(slug string) (*Post, error) {
 
 // GetRelateds returns posts containing overlapping tags
 func (r *Repository) GetRelateds(p *Post, quantity int) []*Post {
-	var results []*Post
-	for _, requestedTag := range p.Tags {
-		for _, post := range r.posts {
-			if p == post {
-				continue
-			}
-			for _, tag := range post.Tags {
-				if tag == requestedTag && !contains(results, post) {
-					results = append(results, post)
-					if len(results) == quantity {
-						return results
-					}
-				}
+	type match struct {
+		score int
+		post  *Post
+	}
+	var matches []match
+
+	for _, post := range r.posts {
+		if p == post {
+			continue
+		}
+		score := similarityScore(p, post)
+		if len(matches) < quantity {
+			matches = append(matches, match{score, post})
+			continue
+		}
+		for i, m := range matches {
+			if score > m.score {
+				matches[i] = match{score, post}
+				break
 			}
 		}
 	}
 
-	return results
+	var posts []*Post
+	for _, m := range matches {
+		posts = append(posts, m.post)
+	}
+	return posts
 }
 
 func contains(posts []*Post, p *Post) bool {
@@ -95,4 +105,23 @@ func contains(posts []*Post, p *Post) bool {
 		}
 	}
 	return false
+}
+
+func similarityScore(a *Post, b *Post) int {
+	var score int
+	if a.Composers[0] == b.Composers[0] {
+		score += 7
+	}
+	if len(a.Tags) == len(b.Tags) {
+		score += 3
+	}
+	for _, tag := range a.Tags {
+		for _, match := range b.Tags {
+			if tag == match {
+				score += 1
+				break
+			}
+		}
+	}
+	return score
 }
