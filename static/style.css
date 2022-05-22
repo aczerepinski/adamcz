@@ -23,7 +23,7 @@ html, div, span, input, textarea {
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   color: var(--grey);
-  font: 600 3rem var(--oswald);
+  font: 300 3rem var(--oswald);
   text-align: center;
   text-transform: uppercase;
 }
@@ -338,6 +338,36 @@ code.inline {
   background-color: var(--cream);
 }
 
+.photo-grid {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.photo-grid picture {
+  margin-bottom: 2rem;
+}
+
+.photo-grid .image--portrait {
+  height: auto;
+  width: 300px;
+}
+
+.photo-grid .image--landscape {
+  height: auto;
+  width: 400px;
+}
+
+.photo-grid .image--portrait img {
+  width: 100%;
+}
+
+.photo-grid .image--landscape img {
+  height: 100%;
+}
+
 .image-wrapper {
   display: flex;
   flex-direction: column;
@@ -372,6 +402,7 @@ code.inline {
 
 .image--portrait {
   height: 600px;
+  max-width: 2000px;
 }
 
 .image--landscape {
@@ -379,6 +410,7 @@ code.inline {
 }
 
 img {
+  object-fit: contain;
   width: 100%;
 }
 

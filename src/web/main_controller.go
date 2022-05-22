@@ -75,6 +75,8 @@ func (c *Controller) pageHandler(slug string, w http.ResponseWriter, r *http.Req
 		c.templates["resume"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz | resume"})
 	case "bio":
 		c.templates["bio"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz | bio"})
+	case "photos":
+		c.templates["photos"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz | photos"})
 	case "":
 		c.templates["home"].Execute(w, PageData{CDN: cdnHost, Version: c.version, MetaTitle: "adamcz"})
 	}
@@ -114,11 +116,15 @@ func initTemplates() map[string]*template.Template {
 	home := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%shome.html", root)))
 
+	photos := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sphotos.html", root)))
+
 	return map[string]*template.Template{
 		"bio":       bio,
 		"blogIndex": blogIndex,
 		"blogShow":  blogShow,
 		"home":      home,
+		"photos":    photos,
 		"resume":    resume,
 	}
 }
