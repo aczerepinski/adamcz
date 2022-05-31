@@ -7,22 +7,25 @@ import (
 	"text/template"
 
 	"github.com/aczerepinski/adamcz/src/blog"
+	"github.com/aczerepinski/adamcz/src/calendar"
 )
 
 // Controller handles routed requests
 type Controller struct {
 	techPosts  *blog.Repository
 	musicPosts *blog.Repository
+	events     *calendar.Repository
 	templates  map[string]*template.Template
 	version    string
 }
 
 // NewController returns an initialized controller
-func NewController(version string, techPosts, musicPosts *blog.Repository) *Controller {
+func NewController(version string, techPosts, musicPosts *blog.Repository, events *calendar.Repository) *Controller {
 	return &Controller{
 		version:    version,
 		techPosts:  techPosts,
 		musicPosts: musicPosts,
+		events:     events,
 		templates:  initTemplates(),
 	}
 }
@@ -35,6 +38,8 @@ func (c *Controller) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		c.musicRouter(w, r)
 	case "blog":
 		c.techRouter(w, r)
+	case "calendar":
+		c.calendarRouter(w, r)
 	default:
 		c.pageHandler(head, w, r)
 	}
@@ -60,6 +65,10 @@ func (c *Controller) techRouter(w http.ResponseWriter, r *http.Request) {
 	default:
 		c.techShow(slug, w, r)
 	}
+}
+
+func (c *Controller) calendarRouter(w http.ResponseWriter, r *http.Request) {
+	c.calendarIndex(w, r)
 }
 
 func (c *Controller) pageHandler(slug string, w http.ResponseWriter, r *http.Request) {
@@ -110,6 +119,11 @@ func initTemplates() map[string]*template.Template {
 	blogShow := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sblogShow.html", root)))
 
+	calendarIndex := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root),
+		fmt.Sprintf("%scalendarIndex.html", root),
+		fmt.Sprintf("%sevent.html", root)))
+
 	resume := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sresume.html", root)))
 
@@ -120,11 +134,12 @@ func initTemplates() map[string]*template.Template {
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sphotos.html", root)))
 
 	return map[string]*template.Template{
-		"bio":       bio,
-		"blogIndex": blogIndex,
-		"blogShow":  blogShow,
-		"home":      home,
-		"photos":    photos,
-		"resume":    resume,
+		"bio":           bio,
+		"blogIndex":     blogIndex,
+		"blogShow":      blogShow,
+		"calendarIndex": calendarIndex,
+		"home":          home,
+		"photos":        photos,
+		"resume":        resume,
 	}
 }

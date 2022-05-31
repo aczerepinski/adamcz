@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/aczerepinski/adamcz/src/blog"
+	"github.com/aczerepinski/adamcz/src/calendar"
 	"github.com/aczerepinski/adamcz/src/web"
 )
 
@@ -22,12 +23,17 @@ func main() {
 		log.Fatalf("no music posts! %v", err)
 	}
 
+	events, err := calendar.InitializeRepository("./events")
+	if err != nil {
+		log.Fatalf("no events! %v", err)
+	}
+
 	fs := http.FileServer(http.Dir("./static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	version := time.Now().Format("20060102150405")
 
-	controller := web.NewController(version, techPosts, musicPosts)
+	controller := web.NewController(version, techPosts, musicPosts, events)
 	http.Handle("/", controller)
 
 	port := os.Getenv("PORT")
