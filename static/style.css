@@ -242,6 +242,13 @@ article {
     transition: .1s ease-in-out;
 }
 
+@media(max-width: 800px) {
+  .nav__links a, .nav__logo {
+    font-size: 1.4rem;
+    margin-right: 1.4rem;
+  }
+}
+
 .nav__logo {
   align-items: center;
   display: flex;
