@@ -1,0 +1,20 @@
+{{ define "event" }}
+<li class="vertical-list__item event">
+  <div class="row">
+    <div class="tags">
+      {{ range .Instruments }}
+      <span class="tag {{ . }}">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+  <div class="row">
+    <span class="date">{{ .DateAndTime }} @</span>
+    <a href="{{ .Venue.URL }}" class="blog-link" target="_blank">{{ .Venue.Name }}</a>
+    <span class="address">- {{ .Venue.Address }}</span>
+  </div>
+  <div class="row bold medium">{{ .BandName }}</div>
+  {{ range .Performers }}
+    <div class="row summary">{{ . }}</div>
+  {{ end }}
+</li>
+{{ end }}

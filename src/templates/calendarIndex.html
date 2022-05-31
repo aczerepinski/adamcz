@@ -1,0 +1,14 @@
+{{ define "page" }}
+<h3>Upcoming Events</h3>
+<ul class="vertical-list">
+  {{ range .UpcomingEvents }}
+    {{ template "event" . }}
+  {{ end }}
+</ul>
+<h3>Past Events</h3>
+<ul class="vertical-list">
+  {{ range .PastEvents }}
+    {{ template "event" . }}
+  {{ end }}
+</ul>
+{{ end }}
