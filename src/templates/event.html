@@ -8,9 +8,9 @@
     </div>
   </div>
   <div class="row">
-    <span class="date">{{ .DateAndTime }} @</span>
+    <span class="date">{{ .DateAndTime }}</span>
     <a href="{{ .Venue.URL }}" class="blog-link" target="_blank">{{ .Venue.Name }}</a>
-    <span class="address">- {{ .Venue.Address }}</span>
+    <span class="address">{{ .Venue.Address }}</span>
   </div>
   <div class="row bold medium">{{ .BandName }}</div>
   {{ range .Performers }}
