@@ -13,6 +13,21 @@
             "Ari Smith - bass",
             "Henry Ptacek - drums"
         ]
+    },
+    {
+        "date": "2022-07-02T11:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "Droster Rd, Madison WI",
+            "name": "Elvehjem Neighborhood Party",
+            "url": "https://www.jonathanhoel.com"
+        },
+        "bandName": "Jon Hoel Quartet",
+        "performers": [
+            "Jon Hoel - tenor saxophone",
+            "Ben Ferris - bass",
+            "Kelby Kryshak - drums"
+        ]
     }
 ]
 
