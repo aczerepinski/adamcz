@@ -4,6 +4,9 @@
   {{ range .UpcomingEvents }}
     {{ template "event" . }}
   {{ end }}
+  {{ if eq (len .UpcomingEvents) 0 }}
+  <p class="row">none 😥</p>
+  {{ end }}
 </ul>
 <h3>Past Events</h3>
 <ul class="vertical-list">

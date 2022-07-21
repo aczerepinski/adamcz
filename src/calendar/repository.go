@@ -41,7 +41,8 @@ func InitializeRepository(root string) (*Repository, error) {
 		}
 		for _, e := range events {
 			if e.Date.Before(now) {
-				r.PastEvents = append(r.PastEvents, e)
+				r.PastEvents = append([]*Event{e}, r.PastEvents...)
+
 			} else {
 				r.UpcomingEvents = append(r.UpcomingEvents, e)
 			}
