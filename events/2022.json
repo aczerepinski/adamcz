@@ -15,7 +15,7 @@
     },
     {
         "date": "2022-07-02T11:00:00.000Z",
-        "instruments": ["rhodes"],
+        "instruments": ["rhodes", "prophet"],
         "venue": {
             "address": "Droster Rd, Madison WI",
             "name": "Elvehjem Neighborhood Party",
@@ -26,6 +26,22 @@
             "Jon Hoel - tenor saxophone",
             "Ben Ferris - bass",
             "Kelby Kryshak - drums"
+        ]
+    },
+    {
+        "date": "2022-07-19T21:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "829 East Washington Ave",
+            "name": "Robinia Courtyard",
+            "url": "https://robiniacourtyard.com"
+        },
+        "bandName": "New Breed Jam",
+        "performers": [
+            "Pawan Benjamin - tenor saxophone",
+            "Richard Hildner - guitar",
+            "Nick Moran - bass",
+            "Wayne Salzmann - drums"
         ]
     }
 ]
