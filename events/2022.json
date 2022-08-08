@@ -49,13 +49,13 @@
         "instruments": ["piano"],
         "venue": {
             "address": "Verona",
-            "name": "Private Party",
-            "url": "#"
+            "name": "Primrose Retreat",
+            "url": "https://www.katherinekramerprojects.com/primrose-retreat"
         },
-        "bandName": "Sam Olson Band",
+        "bandName": "Katherine Kramer",
         "performers": [
-            "Sam Olson - Bass",
-            "??? - Drums"
+            "Katherine Kramer - voice & dance",
+            "Sam Olson - Bass"
         ]
     }
 ]
