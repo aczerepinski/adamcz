@@ -57,6 +57,20 @@
             "Katherine Kramer - voice & dance",
             "Sam Olson - Bass"
         ]
+    },
+    {
+        "date": "2022-08-12T15:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1602 Gilson St",
+            "name": "Funk Factory Guezeria",
+            "url": "https://www.funkfactoryguezeria.com"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - Guitar",
+            "Tim Cieplowski - Drums"
+        ]
     }
 ]
 
