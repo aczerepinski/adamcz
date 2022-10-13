@@ -85,6 +85,21 @@
             "Charlie Painter - Guitar",
             "Kelby Kryshak - Drums"
         ]
+    },
+    {
+        "date": "2022-10-15T13:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://www.facebook.com/events/779179456722179/779179466722178/"
+        },
+        "bandName": "Madison Jazz Jam",
+        "performers": [
+            "Ray Rideout - Saxophones",
+            "Ken Kosut - Piano",
+            "Victor Campbell - Drums"
+        ]
     }
 ]
 
