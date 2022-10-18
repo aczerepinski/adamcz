@@ -55,7 +55,7 @@
         "bandName": "Katherine Kramer",
         "performers": [
             "Katherine Kramer - voice & dance",
-            "Sam Olson - Bass"
+            "Sam Olson - bass"
         ]
     },
     {
@@ -68,8 +68,8 @@
         },
         "bandName": "Charlie Painter Trio",
         "performers": [
-            "Charlie Painter - Guitar",
-            "Tim Cieplowski - Drums"
+            "Charlie Painter - guitar",
+            "Tim Cieplowski - drums"
         ]
     },
     {
@@ -82,8 +82,8 @@
         },
         "bandName": "Charlie Painter Trio",
         "performers": [
-            "Charlie Painter - Guitar",
-            "Kelby Kryshak - Drums"
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
         ]
     },
     {
@@ -96,9 +96,23 @@
         },
         "bandName": "Madison Jazz Jam",
         "performers": [
-            "Ray Rideout - Saxophones",
-            "Ken Kosut - Piano",
-            "Victor Campbell - Drums"
+            "Ray Rideout - alto saxophone",
+            "Ken Kosut - piano",
+            "Victor Campbell - drums"
+        ]
+    },
+    {
+        "date": "2022-10-20T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
         ]
     }
 ]
