@@ -128,6 +128,21 @@
             "Charlie Painter - guitar",
             "Kelby Kryshak - drums"
         ]
+    },
+    {
+        "date": "2022-12-03T13:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://facebook.com/events/473120858026944"
+        },
+        "bandName": "Madison Jazz Jam",
+        "performers": [
+            "Lucy Croasdale - tenor saxophone",
+            "Charlie Painter - guitar",
+            "Ali Dlugi - drums"
+        ]
     }
 ]
 
