@@ -1,0 +1,17 @@
+[
+    {
+        "date": "2023-01-19T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
+    }
+]
+
