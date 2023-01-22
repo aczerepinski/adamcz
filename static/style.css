@@ -47,7 +47,22 @@ a:hover {
   color: var(--gold);
 }
 
+p a {
+  text-decoration: underline;
+}
+
 .contact-info {
+  display: flex;
+  font: 400 2rem var(--slabo);
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.contact-info span {
+  font: 400 2rem var(--slabo);
+}
+
+.contact-info span:nth-child(even) {
   display: none;
 }
 
@@ -88,12 +103,20 @@ article {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+  text-transform: initial;
 }
 
 .resume h2 {
   font-size: 2.4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
+  text-transform: initial;
+}
+
+.resume h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: initial;
 }
 
 .resume h4 {
@@ -101,12 +124,19 @@ article {
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  text-align: initial;
 }
 
 .resume h5 {
   color: black;
-  font: 400 1.7rem var(--oswald);
+  font: 600 1.7rem var(--oswald);
   margin-bottom: 1rem;
+  text-align: initial;
+  text-transform: initial;
+}
+
+.resume h6 {
+  text-transform: initial;
 }
 
 .resume p {
@@ -241,6 +271,11 @@ article {
     text-transform: uppercase;
     transition: .1s ease-in-out;
 }
+
+.center {
+  text-align: center;
+}
+
 
 @media(max-width: 800px) {
   .nav__links a, .nav__logo {
@@ -576,22 +611,11 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
     padding-top: initial;
   }
 
-  .resume h2 {
-    margin-bottom: 1rem;
-  }
 
-  .contact-info {
-    display: flex;
-    font: 700 2.5rem var(--ubuntu);
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
 
   .contact-info:last-of-type {
     margin-bottom: 2rem;
   }
 
-  .contact-info span:nth-child(even) {
-    display: none;
-  }
+
 }
