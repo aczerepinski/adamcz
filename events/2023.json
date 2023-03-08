@@ -26,6 +26,33 @@
             "Anders Svanoe - baritone saxophone, composer",
             "too many others to list!"
         ]
+    },
+    {
+        "date": "2023-03-10T17:55:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "381 E Main St, Stoughton",
+            "name": "Stoughton Opera House",
+            "url": "https://www.stoughtonoperahouse.com/events/2023/3/10/dirty-dozen-brass-band"
+        },
+        "bandName": "Jon Hoel Duo",
+        "performers": [
+            "Jon Hoel - Tenor Saxophone"
+        ]
+    },
+    {
+        "date": "2023-03-16T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
     }
 ]
 
