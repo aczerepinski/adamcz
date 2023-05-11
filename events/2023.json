@@ -53,6 +53,35 @@
             "Charlie Painter - guitar",
             "Kelby Kryshak - drums"
         ]
+    },
+    {
+        "date": "2023-06-14T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "Penn Park",
+            "name": "Madison Jazz Festival",
+            "url": "https://artlitlab.org/events/dig-jazz-rick-flowers-at-penn-park"
+        },
+        "bandName": "Rick Flowers",
+        "performers": [
+            "Rick Flowers - keyboards & vocals",
+            "Chris Moseley - guitar",
+            "Kevin Carnes - drums"
+        ]
+    },
+    {
+        "date": "2023-06-21T19:00:00.000Z",
+        "instruments": ["rhodes", "prophet"],
+        "venue": {
+            "address": "Front Porch, Tiercel Dr",
+            "name": "Make Music Day",
+            "url": "https://www.makemusicmadison.org"
+        },
+        "bandName": "Adam Czerepinski Trio",
+        "performers": [
+            "Jon Hoel - tenor saxophone",
+            "Jordan Cohen - drums"
+        ]
     }
 ]
 

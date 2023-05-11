@@ -3,8 +3,8 @@
         "date": "2022-06-21T18:00:00.000Z",
         "instruments": ["rhodes", "prophet", "trumpet"],
         "venue": {
-            "address": "Tiercel Dr, Verona WI",
-            "name": "Front Porch",
+            "address": "Front Porch, Tiercel Dr, Verona WI",
+            "name": "Make Music Day",
             "url": "https://www.makemusicmadison.org/listings/artists/f81a1d65-58d7-4bfb-a43e-2f7682ff9b35"
         },
         "bandName": "Adam Czerepinski, featuring:",
