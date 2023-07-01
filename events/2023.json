@@ -82,6 +82,21 @@
             "Jon Hoel - tenor saxophone",
             "Jordan Cohen - drums"
         ]
+    },
+    {
+        "date": "2023-07-15T13:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://www.instagram.com/p/CuCYz-eOIkD"
+        },
+        "bandName": "Madison Jazz Jam",
+        "performers": [
+            "Jon Hoel - tenor saxophone",
+            "Chris Moseley - guitar",
+            "Matt Endres - drums"
+        ]
     }
 ]
 
