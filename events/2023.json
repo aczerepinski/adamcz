@@ -84,6 +84,19 @@
         ]
     },
     {
+        "date": "2023-07-07T13:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Madisons",
+            "url": "https://www.madisonsdowntown.com"
+        },
+        "bandName": "Pawan Benjamin duo",
+        "performers": [
+            "Pawan Benjamin - tenor saxophone"
+        ]
+    },
+    {
         "date": "2023-07-15T13:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
