@@ -87,7 +87,7 @@
         "date": "2023-07-07T18:30:00.000Z",
         "instruments": ["rhodes"],
         "venue": {
-            "address": "1224 Williamson St",
+            "address": "119 King St",
             "name": "Madisons",
             "url": "https://www.madisonsdowntown.com"
         },
@@ -126,7 +126,7 @@
         ]
     },
     {
-        "date": "2023-08-03T19:00:00.000Z",
+        "date": "2023-08-02T19:00:00.000Z",
         "instruments": ["rhodess"],
         "venue": {
             "address": "2513 Seiferth Rd",
