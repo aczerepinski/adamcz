@@ -84,7 +84,7 @@
         ]
     },
     {
-        "date": "2023-07-07T13:00:00.000Z",
+        "date": "2023-07-07T18:30:00.000Z",
         "instruments": ["rhodes"],
         "venue": {
             "address": "1224 Williamson St",
@@ -109,6 +109,34 @@
             "Jon Hoel - tenor saxophone",
             "Chris Moseley - guitar",
             "Matt Endres - drums"
+        ]
+    },
+    {
+        "date": "2023-07-28T20:00:00.000Z",
+        "instruments": ["rhodess"],
+        "venue": {
+            "address": "610 North St",
+            "name": "North Street Cabaret",
+            "url": "http://www.ted.hefko.net/gigs.htm"
+        },
+        "bandName": "Ted Hefko",
+        "performers": [
+            "Nick Moran - bass",
+            "Henry Ptacek - drums"
+        ]
+    },
+    {
+        "date": "2023-08-03T19:00:00.000Z",
+        "instruments": ["rhodess"],
+        "venue": {
+            "address": "2513 Seiferth Rd",
+            "name": "Red Rooster",
+            "url": "http://www.ted.hefko.net/gigs.htm"
+        },
+        "bandName": "Ted Hefko & the Thousandaires",
+        "performers": [
+            "Nick Moran - bass",
+            "Henry Ptacek - drums"
         ]
     }
 ]
