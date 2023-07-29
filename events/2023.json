@@ -113,7 +113,7 @@
     },
     {
         "date": "2023-07-28T20:00:00.000Z",
-        "instruments": ["rhodess"],
+        "instruments": ["rhodes"],
         "venue": {
             "address": "610 North St",
             "name": "North Street Cabaret",
@@ -121,13 +121,13 @@
         },
         "bandName": "Ted Hefko",
         "performers": [
-            "Nick Moran - bass",
-            "Henry Ptacek - drums"
+            "John Christensen - bass",
+            "Preston Carr - drums"
         ]
     },
     {
         "date": "2023-08-02T19:00:00.000Z",
-        "instruments": ["rhodess"],
+        "instruments": ["bass"],
         "venue": {
             "address": "2513 Seiferth Rd",
             "name": "Red Rooster",
@@ -135,8 +135,8 @@
         },
         "bandName": "Ted Hefko & the Thousandaires",
         "performers": [
-            "Nick Moran - bass",
-            "Henry Ptacek - drums"
+            "Chris Moseley - guitar",
+            "Preston Carr - drums"
         ]
     }
 ]
