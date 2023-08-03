@@ -138,6 +138,36 @@
             "Chris Moseley - guitar",
             "Preston Carr - drums"
         ]
+    },
+    {
+        "date": "2023-08-05T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "Labor Temple - 1602 S Park St",
+            "name": "Park Street Music Fest",
+            "url": "https://isthmus.com/events/park-street-music-fest/?occ_dtstart=2023-08-05T15:00"
+        },
+        "bandName": "Rick Flowers & Amalgam X",
+        "performers": [
+            "Rick Flowers - keyboards & vocals",
+            "Chris Moseley - guitar",
+            "Jalen - drums"
+        ]
+    },
+    {
+        "date": "2023-08-09T20:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "101 King St",
+            "name": "Lucille",
+            "url": "https://www.lucillemadison.com/event-details/live-lucille-the-wayne-salzmann-quartet"
+        },
+        "bandName": "Wayne Salzmann Quartet",
+        "performers": [
+            "John Christensen - bass",
+            "Wayne Salzmann - drums",
+            "Jon Hoel - tenor saxophone"
+        ]
     }
 ]
 
