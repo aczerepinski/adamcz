@@ -56,6 +56,27 @@ func (r *Repository) GetAll(page, perPage int) []*Post {
 	return r.posts
 }
 
+// GetBy returns posts that contain a matching tag for ALL query terms
+func (r *Repository) GetBy(query []string) []*Post {
+	var posts []*Post
+outer:
+	for _, post := range r.posts {
+		for _, searchTerm := range query {
+			found := false
+			for _, postTag := range post.Tags {
+				if postTag == searchTerm {
+					found = true
+				}
+			}
+			if !found {
+				continue outer
+			}
+		}
+		posts = append(posts, post)
+	}
+	return posts
+}
+
 // GetBySlug returns a single Post
 func (r *Repository) GetBySlug(slug string) (*Post, error) {
 	for _, p := range r.posts {

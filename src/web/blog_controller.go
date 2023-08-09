@@ -29,13 +29,20 @@ type blogShow struct {
 
 // musicIndex serves a summary of all music posts
 func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
+	var posts []*blog.Post
+	if instrument := getParam("instrument", r); instrument != "" {
+		posts = c.musicPosts.GetBy([]string{instrument})
+	} else {
+		posts = c.musicPosts.GetAll(1, 10)
+	}
+
 	data := blogIndex{
 		CDN:        cdnHost,
 		Version:    c.version,
 		PageTitle:  "Music",
 		MetaTitle:  "adamcz | music",
 		PathPrefix: "/music/",
-		Posts:      c.musicPosts.GetAll(1, 10),
+		Posts:      posts,
 	}
 	c.templates["blogIndex"].Execute(w, data)
 }
