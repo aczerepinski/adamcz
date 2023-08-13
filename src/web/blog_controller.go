@@ -8,6 +8,20 @@ import (
 	"github.com/aczerepinski/adamcz/src/blog"
 )
 
+type filter struct {
+	Name   string
+	Active bool
+	Path   string
+}
+
+func (f filter) Status() string {
+	if f.Active {
+		return "active"
+	}
+
+	return "inactive"
+}
+
 type blogIndex struct {
 	CDN        string
 	Version    string
@@ -15,6 +29,7 @@ type blogIndex struct {
 	MetaTitle  string
 	PathPrefix string
 	Posts      []*blog.Post
+	Filters    []filter
 }
 
 type blogShow struct {
@@ -29,13 +44,22 @@ type blogShow struct {
 
 // musicIndex serves a summary of all music posts
 func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
+	var posts []*blog.Post
+	instruments := getParam("instruments", r)
+	if len(instruments) > 0 {
+		posts = c.musicPosts.GetBy(instruments)
+	} else {
+		posts = c.musicPosts.GetAll(1, 10)
+	}
+
 	data := blogIndex{
 		CDN:        cdnHost,
 		Version:    c.version,
 		PageTitle:  "Music",
 		MetaTitle:  "adamcz | music",
 		PathPrefix: "/music/",
-		Posts:      c.musicPosts.GetAll(1, 10),
+		Posts:      posts,
+		Filters:    musicFilters(instruments),
 	}
 	c.templates["blogIndex"].Execute(w, data)
 }

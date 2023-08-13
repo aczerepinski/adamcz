@@ -2,6 +2,15 @@
   <h1 class="index-title">{{ .PageTitle }}</h1>
   {{ $prefix := .PathPrefix }}
 
+  <ul class="filters">
+  {{ range .Filters }}
+    <li class="">
+      <a href="{{ .Path }}">
+        <span class="filter filter--{{ .Status }} {{ .Name }}">{{ .Name}} </span>
+      </a>
+    </li>
+  {{ end }}
+  </ul>
   <ul class="vertical-list">
   {{ range .Posts }}
     <li class="vertical-list__item">

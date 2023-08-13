@@ -170,6 +170,37 @@ article {
   margin-bottom: 1rem;
 }
 
+.filters {
+  align-items: center;
+  border-bottom: 1px solid var(--grey);
+  display: flex;
+  flex-direction: row;
+  height: 3.5rem;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.filter {
+  border: 1px solid black;
+  color: black;
+  font: 300 1.2rem var(--oswald);
+  letter-spacing: 1px;
+  margin-right: .5rem;
+  padding: .4rem;
+  position: relative;
+  text-transform: initial;
+}
+
+.filter:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.filter.filter--active {
+  color: white;
+}
+
 .tag-list {
   align-items: flex-start;
   display: flex;
@@ -213,24 +244,29 @@ article {
   background-color: #f0da50;
 }
 
-.tag.piano {
+.tag.piano, .filter.piano:hover, .filter--active.piano {
   background-color: #222;
 }
 
-.tag.bass {
+.tag.bass, .filter.bass:hover, .filter--active.bass {
   background-color: #b16554;
 }
 
-.tag.drums {
+.tag.drums, .filter.drums:hover, .filter--active.drums {
   background-color: #3f2f1a;
 }
 
-.tag.flugelhorn, .tag.flute {
+.tag.flugelhorn, .tag.flute, .filter.flugelhorn:hover, .filter.flute:hover,
+.filter--active.flute, .filter--active.flugelhorn {
   background-color: #9a968f;
 }
 
-.tag.trumpet {
+.tag.trumpet, .filter.trumpet:hover, .filter--active.trumpet {
   background-color: var(--gold);
+}
+
+.filter.rhodes:hover, .filter--active.rhodes {
+  background-color: black;
 }
 
 .logo--square {
