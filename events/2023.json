@@ -168,6 +168,33 @@
             "Wayne Salzmann - drums",
             "Jon Hoel - tenor saxophone"
         ]
+    },
+    {
+        "date": "2023-09-08T18:30:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "119 King St",
+            "name": "Madisons",
+            "url": "https://www.madisonsdowntown.com"
+        },
+        "bandName": "Pawan Benjamin duo",
+        "performers": [
+            "Pawan Benjamin - tenor saxophone"
+        ]
+    },
+    {
+        "date": "2023-09-21T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
     }
 ]
 
