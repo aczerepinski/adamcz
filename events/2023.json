@@ -195,6 +195,34 @@
             "Charlie Painter - guitar",
             "Kelby Kryshak - drums"
         ]
+    },
+    {
+        "date": "2023-11-02T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
+    },
+    {
+        "date": "2023-12-07T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
     }
 ]
 
