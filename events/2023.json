@@ -223,6 +223,20 @@
             "Charlie Painter - guitar",
             "Kelby Kryshak - drums"
         ]
+    },
+    {
+        "date": "2023-12-02T20:00:00.000Z",
+        "instruments": ["trumpet"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club/2022/12/13/astro-anders-svanoes-teleporting-rhythmic-orchestra/"
+        },
+        "bandName": "ASTRO",
+        "performers": [
+            "Anders Svanoe - baritone saxophone, composer",
+            "too many others to list!"
+        ]
     }
 ]
 
