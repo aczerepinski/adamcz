@@ -211,20 +211,6 @@
         ]
     },
     {
-        "date": "2023-12-07T19:00:00.000Z",
-        "instruments": ["bass"],
-        "venue": {
-            "address": "224 Ohio Ave",
-            "name": "Ohio Tavern",
-            "url": "https://theohiotavern.com/home/"
-        },
-        "bandName": "Charlie Painter Trio",
-        "performers": [
-            "Charlie Painter - guitar",
-            "Kelby Kryshak - drums"
-        ]
-    },
-    {
         "date": "2023-12-02T20:00:00.000Z",
         "instruments": ["trumpet"],
         "venue": {
@@ -236,6 +222,20 @@
         "performers": [
             "Anders Svanoe - baritone saxophone, composer",
             "too many others to list!"
+        ]
+    },
+    {
+        "date": "2023-12-07T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
         ]
     }
 ]
