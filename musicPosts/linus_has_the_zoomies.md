@@ -5,7 +5,7 @@ Linus has the Zoomies
 Adam Czerepinski
 
 *** performers ***
-Adam Czerepinski, Pawan Benjamin, Chris Moseley, Jason Kutz, Kevin Carnes
+Adam Czerepinski, Pawan Benjamin, Chris Mosley, Jason Kutz, Kevin Carnes
 
 *** date ***
 10/8/23
