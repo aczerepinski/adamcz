@@ -210,7 +210,7 @@
             "Kelby Kryshak - drums"
         ]
     },
-       {
+    {
         "date": "2023-11-09T19:30:00.000Z",
         "instruments": ["bass"],
         "venue": {
@@ -250,6 +250,20 @@
         "performers": [
             "Charlie Painter - guitar",
             "Kelby Kryshak - drums"
+        ]
+    },
+    {
+        "date": "2023-12-14T19:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "TBA - drums"
         ]
     }
 ]
