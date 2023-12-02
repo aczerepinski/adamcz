@@ -1,0 +1,17 @@
+[
+    {
+        "date": "2024-01-12T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "Majestic Theater",
+            "name": "Wisconsin Jazz Fest",
+            "url": "https://majesticmadison.com/event/wisconsin-jazz-fest-3/"
+        },
+        "bandName": "Rick Flowers & Amalgam X",
+        "performers": [
+            "Rick Flowers - keyboards & vocals",
+            "Chris Mosley - guitar",
+            "Kevin Carnes - drums"
+        ]
+    }
+]
