@@ -253,6 +253,20 @@
         ]
     },
     {
+        "date": "2023-12-13T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "644 W Washington Ave",
+            "name": "Harvey House",
+            "url": "https://www.theharveyhouse.com/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Kelby Kryshak - drums"
+        ]
+    },
+    {
         "date": "2023-12-14T19:30:00.000Z",
         "instruments": ["bass"],
         "venue": {
@@ -263,7 +277,7 @@
         "bandName": "Charlie Painter Trio",
         "performers": [
             "Charlie Painter - guitar",
-            "TBA - drums"
+            "Jordan Kowalski - drums"
         ]
     }
 ]
