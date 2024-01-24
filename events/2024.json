@@ -43,6 +43,20 @@
         ]
     },
     {
+        "date": "2024-02-03T19:30:00.000Z",
+        "instruments": ["trumpet"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club/2022/12/13/astro-anders-svanoes-teleporting-rhythmic-orchestra/"
+        },
+        "bandName": "ASTRO",
+        "performers": [
+            "Anders Svanoe - baritone saxophone, composer",
+            "too many others to list!"
+        ]
+    },
+    {
         "date": "2024-02-08T19:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
