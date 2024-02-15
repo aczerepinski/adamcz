@@ -70,5 +70,20 @@
             "Chris Mosley - guitar",
             "Kevin Carnes - drums"
         ]
+    },
+    {
+        "date": "2024-02-11T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone",
+            "Francisco Martinez - percussion"
+        ]
     }
 ]
