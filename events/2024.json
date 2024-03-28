@@ -85,5 +85,19 @@
             "Anders Svanoe - tenor saxophone",
             "Francisco Martinez - percussion"
         ]
+    },
+    {
+        "date": "2024-04-06T18:00:00.000Z",
+        "instruments": ["trumpet"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club"
+        },
+        "bandName": "ASTRO",
+        "performers": [
+            "Anders Svanoe - baritone saxophone, composer",
+            "too many others to list!"
+        ]
     }
 ]
