@@ -5,7 +5,7 @@ Storm Spotting
 Adam Czerepinski
 
 *** performers ***
-Adam Czerepinski, Jim Doherty, Pawan Benjamin, Jon Hoel, Flaviano Estrella, Jordan Cohen
+Hornado
 
 *** date ***
 4/15/24
@@ -17,7 +17,19 @@ https://www.youtube.com/watch?v=AaFC3kAXjKg
 bass
 
 *** body ***
-Featuring Hornado
+Featuring Hornado:
+
+- Jim Doherty - trumpet
+
+- Pawan Benjamin - alto saxophone
+
+- Jon Hoel - tenor saxophone
+
+- Flaviano Estrella - trombone
+
+- Jordan Cohen - drums
+
+- Adam Czerepinski - bass
 
 Gear used:
 
