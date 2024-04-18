@@ -99,5 +99,72 @@
             "Anders Svanoe - baritone saxophone, composer",
             "too many others to list!"
         ]
+    },
+    {
+        "date": "2024-05-04T19:00:00.000Z",
+        "instruments": ["trumpet"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club"
+        },
+        "bandName": "ASTRO",
+        "performers": [
+            "Anders Svanoe - baritone saxophone, composer",
+            "too many others to list!"
+        ]
+    },
+    {
+        "date": "2024-06-17T18:00:00.000Z",
+        "instruments": ["trumpet"],
+        "venue": {
+            "address": "Wisconsin Union Terrace",
+            "name": "Madison Jazz Festival",
+            "url": "https://artlitlab.org/"
+        },
+        "bandName": "ASTRO",
+        "performers": [
+            "Anders Svanoe - baritone saxophone, composer",
+            "too many others to list!"
+        ]
+    },
+    {
+        "date": "2024-06-21T18:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "address": "Sun Prairie",
+            "name": "",
+            "url": "https://www.jonathanhoel.com"
+        },
+        "bandName": "Jon Hoel Quartet",
+        "performers": [
+            "Jon Hoel - tenor saxophone"
+        ]
+    },
+    {
+        "date": "2024-08-04T18:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "address": "2513 Seiferth Rd",
+            "name": "Red Rooster",
+            "url": "http://www.ted.hefko.net/gigs.htm"
+        },
+        "bandName": "Ted Hefko & Friends",
+        "performers": [
+            "Ted Hefko - guitar, vocals, saxophone"
+        ]
+    },
+    {
+        "date": "2024-08-09T18:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "address": "Wisconsin Union Terrace",
+            "name": "Wisconsin Union Terrace",
+            "url": "http://www.ted.hefko.net/gigs.htm"
+        },
+        "bandName": "Ted Hefko & Friends",
+        "performers": [
+            "Ted Hefko - guitar, vocals, saxophone"
+        ]
     }
 ]
