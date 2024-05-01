@@ -101,7 +101,7 @@
         ]
     },
     {
-        "date": "2024-05-04T19:00:00.000Z",
+        "date": "2024-06-01T20:00:00.000Z",
         "instruments": ["trumpet"],
         "venue": {
             "address": "1224 Williamson St",
@@ -158,7 +158,7 @@
         "date": "2024-08-09T18:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
-            "address": "Wisconsin Union Terrace",
+            "address": "",
             "name": "Wisconsin Union Terrace",
             "url": "http://www.ted.hefko.net/gigs.htm"
         },
