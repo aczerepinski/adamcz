@@ -115,7 +115,7 @@
         ]
     },
     {
-        "date": "2024-06-17T18:00:00.000Z",
+        "date": "2024-06-16T13:00:00.000Z",
         "instruments": ["trumpet"],
         "venue": {
             "address": "Wisconsin Union Terrace",
@@ -129,6 +129,20 @@
         ]
     },
     {
+        "date": "2024-06-19T18:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "address": "2841 Index Rd, Fitchburg",
+            "name": "COPA",
+            "url": "https://www.madisonjazz.com"
+        },
+        "bandName": "Madison Jazz Jam - House Band",
+        "performers": [
+            "Ben Ferris - bass",
+            "Kevin Carnes - drums"
+        ]
+    },
+    {
         "date": "2024-06-21T18:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
@@ -138,7 +152,9 @@
         },
         "bandName": "Jon Hoel Quartet",
         "performers": [
-            "Jon Hoel - tenor saxophone"
+            "Jon Hoel - tenor saxophone",
+            "Ben Ferris - bass",
+            "Kevin Carnes - drums"
         ]
     },
     {
