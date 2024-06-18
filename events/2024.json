@@ -146,8 +146,8 @@
         "date": "2024-06-21T18:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
-            "address": "Sun Prairie",
-            "name": "",
+            "address": "555 North St, Sun Prairie",
+            "name": "Wetmore Park",
             "url": "https://www.jonathanhoel.com"
         },
         "bandName": "Jon Hoel Quartet",
@@ -155,6 +155,20 @@
             "Jon Hoel - tenor saxophone",
             "Ben Ferris - bass",
             "Kevin Carnes - drums"
+        ]
+    },
+    {
+        "date": "2024-07-12T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "5441 High Crossing Blvd",
+            "name": "Pooley's",
+            "url": "https://pooleysmadison.com/wp-content/uploads/2024/05/2024-Music-Lineup.pdf"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Jordan Kowalski - drums"
         ]
     },
     {
