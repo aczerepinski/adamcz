@@ -172,7 +172,7 @@
         ]
     },
     {
-        "date": "2024-08-04T18:00:00.000Z",
+        "date": "2024-08-04T15:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
             "address": "2513 Seiferth Rd",
@@ -185,7 +185,7 @@
         ]
     },
     {
-        "date": "2024-08-09T18:00:00.000Z",
+        "date": "2024-08-09T16:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
             "address": "",
@@ -195,6 +195,21 @@
         "bandName": "Ted Hefko & Friends",
         "performers": [
             "Ted Hefko - guitar, vocals, saxophone"
+        ]
+    },
+    {
+        "date": "2024-10-26T19:00:00.000Z",
+        "instruments": ["keyboards"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club"
+        },
+        "bandName": "Chris Mosley Quartet",
+        "performers": [
+            "Chris Mosley - guitar",
+            "Wayne Salzmann - drums",
+            "John Mesoloras - bass"
         ]
     }
 ]
