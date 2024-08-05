@@ -181,7 +181,9 @@
         },
         "bandName": "Ted Hefko & Friends",
         "performers": [
-            "Ted Hefko - guitar, vocals, saxophone"
+            "Ted Hefko - guitar, vocals, saxophone",
+            "Nick Moran - bass",
+            "Jordan Cohen - drums"
         ]
     },
     {
@@ -194,7 +196,23 @@
         },
         "bandName": "Ted Hefko & Friends",
         "performers": [
-            "Ted Hefko - guitar, vocals, saxophone"
+            "Ted Hefko - guitar, vocals, saxophone",
+            "Nick Moran - bass"
+        ]
+    },
+    {
+        "date": "2024-09-12T19:00:00.000Z",
+        "instruments": ["keyboards"],
+        "venue": {
+            "address": "610 North St",
+            "name": "North Street Cafe",
+            "url": "https://www.northstreetcabaret.com"
+        },
+        "bandName": "Chris Mosley Quartet",
+        "performers": [
+            "Chris Mosley - guitar",
+            "Wayne Salzmann - drums",
+            "John Mesoloras - bass"
         ]
     },
     {
