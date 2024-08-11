@@ -173,7 +173,7 @@
     },
     {
         "date": "2024-08-04T15:00:00.000Z",
-        "instruments": ["piano"],
+        "instruments": ["keyboards"],
         "venue": {
             "address": "2513 Seiferth Rd",
             "name": "Red Rooster",
@@ -188,7 +188,7 @@
     },
     {
         "date": "2024-08-09T16:00:00.000Z",
-        "instruments": ["piano"],
+        "instruments": ["keyboards"],
         "venue": {
             "address": "",
             "name": "Wisconsin Union Terrace",
@@ -197,7 +197,23 @@
         "bandName": "Ted Hefko & Friends",
         "performers": [
             "Ted Hefko - guitar, vocals, saxophone",
-            "Nick Moran - bass"
+            "Nick Moran - bass",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2024-08-11T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone",
+            "Arno Gonzalez - percussion"
         ]
     },
     {
