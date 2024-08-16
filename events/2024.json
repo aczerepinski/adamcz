@@ -217,6 +217,21 @@
         ]
     },
     {
+        "date": "2024-09-07T16:00:00.000Z",
+        "instruments": ["keyboards"],
+        "venue": {
+            "address": "",
+            "name": "Middleton Jazz Fest",
+            "url": ""
+        },
+        "bandName": "Chris Mosley Quartet",
+        "performers": [
+            "Chris Mosley - guitar",
+            "Wayne Salzmann - drums",
+            "John Mesoloras - bass"
+        ]
+    },
+    {
         "date": "2024-09-12T19:00:00.000Z",
         "instruments": ["keyboards"],
         "venue": {
