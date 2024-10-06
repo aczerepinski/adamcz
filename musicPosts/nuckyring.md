@@ -8,7 +8,7 @@ Adam Czerepinski
 Adam Czerepinski, Clay Lyons, Chris Mosley, Jordan Kowalski
 
 *** date ***
-10/4/2024
+10/4/24
 
 *** youtube ***
 https://www.youtube.com/watch?v=MMqd7R2M3ds
