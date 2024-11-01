@@ -247,6 +247,19 @@
         ]
     },
     {
+        "date": "2024-10-24T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "",
+            "name": "",
+            "url": ""
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    },
+    {
         "date": "2024-10-26T19:00:00.000Z",
         "instruments": ["keyboards"],
         "venue": {
