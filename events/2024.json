@@ -273,5 +273,31 @@
             "Wayne Salzmann - drums",
             "John Mesoloras - bass"
         ]
+    },
+    {
+        "date": "2024-12-07T19:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "name": "private event"
+        },
+        "bandName": "Jon Hoel Trio",
+        "performers": [
+            "Jon Hoel - tenor saxophone",
+            "Nick Moran - bass"
+        ]
+    },
+    {
+        "date": "2024-12-31T21:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
     }
 ]
