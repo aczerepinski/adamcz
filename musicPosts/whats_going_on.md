@@ -2,7 +2,7 @@
 What's Going On
 
 *** composers ***
-Marvin Gaye
+Marvin Gaye, Al Cleveland, Renaldo Benson
 
 *** performers ***
 Adam Czerepinski
@@ -17,3 +17,5 @@ https://www.youtube.com/watch?v=MyDYsM5KNtc
 rhodes, bass, congas, trumpet, flute
 
 *** body ***
+Composed by Al Cleveland, Marvin Gaye, Renaldo Benson.
+All instruments performed by Adam Czerepinski
