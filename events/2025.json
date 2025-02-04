@@ -1,0 +1,45 @@
+[
+    {
+        "date": "2025-02-11T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2025-02-09T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone",
+            "Francisco Martinez - percussion"
+        ]
+    },
+    {
+        "date": "2025-03-06T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "t/b/d - drums"
+        ]
+    }
+]
