@@ -41,5 +41,19 @@
             "Charlie Painter - guitar",
             "t/b/d - drums"
         ]
+    },
+    {
+        "date": "2025-04-24T19:00:00.000Z",
+        "instruments": ["piano"],
+        "venue": {
+            "address": "610 North St",
+            "name": "North Street Cafe",
+            "url": "https://www.northstreetcabaret.com/events/2025/4/24/adam-czerepinski-pawan-benjamin-amp-john-christensen"
+        },
+        "bandName": "Adam Czerepinski Trio",
+        "performers": [
+            "Pawan Benjamin - tenor saxophone",
+            "John Christensen - bass"
+        ]
     }
 ]
