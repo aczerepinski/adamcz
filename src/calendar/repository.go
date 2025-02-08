@@ -3,7 +3,7 @@ package calendar
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"sort"
 	"strings"
 	"time"
@@ -25,13 +25,13 @@ func InitializeRepository(root string) (*Repository, error) {
 		root = fmt.Sprintf("%s/", root)
 	}
 
-	files, err := ioutil.ReadDir(root)
+	files, err := os.ReadDir(root)
 	if err != nil {
 		return &r, fmt.Errorf("unable to read directory: %v", err)
 	}
 
 	for _, f := range files {
-		data, err := ioutil.ReadFile(fmt.Sprintf("%s%s", root, f.Name()))
+		data, err := os.ReadFile(fmt.Sprintf("%s%s", root, f.Name()))
 		if err != nil {
 			return &r, err
 		}
