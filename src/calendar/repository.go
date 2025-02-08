@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"sort"
 	"strings"
 	"time"
 )
@@ -48,6 +49,16 @@ func InitializeRepository(root string) (*Repository, error) {
 			}
 		}
 	}
+
+	// Sort UpcomingEvents by date ascending
+	sort.Slice(r.UpcomingEvents, func(i, j int) bool {
+		return r.UpcomingEvents[i].Date.Before(r.UpcomingEvents[j].Date)
+	})
+
+	// Sort PastEvents by date descending
+	sort.Slice(r.PastEvents, func(i, j int) bool {
+		return r.PastEvents[i].Date.After(r.PastEvents[j].Date)
+	})
 
 	return &r, nil
 }
