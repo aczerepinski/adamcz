@@ -256,7 +256,7 @@ article {
   background-color: #3f2f1a;
 }
 
-.tag.flugelhorn, .tag.flute, .filter.flugelhorn:hover, .filter.flute:hover,
+.tag.flugelhorn, .tag.flute, .tag.trombone, .filter.flugelhorn:hover, .filter.flute:hover,
 .filter--active.flute, .filter--active.flugelhorn {
   background-color: #9a968f;
 }
