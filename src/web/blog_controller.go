@@ -55,8 +55,8 @@ func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
 	data := blogIndex{
 		CDN:        cdnHost,
 		Version:    c.version,
-		PageTitle:  "Music",
-		MetaTitle:  "adamcz | music",
+		PageTitle:  "Videos",
+		MetaTitle:  "adamcz | videos",
 		PathPrefix: "/music/",
 		Posts:      posts,
 		Filters:    musicFilters(instruments),
