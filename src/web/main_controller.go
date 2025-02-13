@@ -12,21 +12,23 @@ import (
 
 // Controller handles routed requests
 type Controller struct {
-	techPosts  *blog.Repository
-	musicPosts *blog.Repository
-	events     *calendar.Repository
-	templates  map[string]*template.Template
-	version    string
+	techPosts      *blog.Repository
+	musicPosts     *blog.Repository
+	transcriptions *blog.Repository
+	events         *calendar.Repository
+	templates      map[string]*template.Template
+	version        string
 }
 
 // NewController returns an initialized controller
-func NewController(version string, techPosts, musicPosts *blog.Repository, events *calendar.Repository) *Controller {
+func NewController(version string, techPosts, musicPosts, transcriptions *blog.Repository, events *calendar.Repository) *Controller {
 	return &Controller{
-		version:    version,
-		techPosts:  techPosts,
-		musicPosts: musicPosts,
-		events:     events,
-		templates:  initTemplates(),
+		version:        version,
+		techPosts:      techPosts,
+		musicPosts:     musicPosts,
+		transcriptions: transcriptions,
+		events:         events,
+		templates:      initTemplates(),
 	}
 }
 
@@ -38,6 +40,8 @@ func (c *Controller) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		c.musicRouter(w, r)
 	case "blog":
 		c.techRouter(w, r)
+	case "transcriptions":
+		c.transcriptionRouter(w, r)
 	case "calendar":
 		c.calendarRouter(w, r)
 	default:
@@ -53,6 +57,17 @@ func (c *Controller) musicRouter(w http.ResponseWriter, r *http.Request) {
 		c.musicIndex(w, r)
 	default:
 		c.musicShow(slug, w, r)
+	}
+}
+
+func (c *Controller) transcriptionRouter(w http.ResponseWriter, r *http.Request) {
+	var slug string
+	slug, r.URL.Path = popFromPath(r.URL.Path)
+	switch slug {
+	case "":
+		c.transcriptionsIndex(w, r)
+	default:
+		c.transcriptionsShow(slug, w, r)
 	}
 }
 

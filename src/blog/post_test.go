@@ -4,10 +4,11 @@ import "testing"
 
 func TestNewPost(t *testing.T) {
 	raw := map[string]string{
-		"title": "Example",
-		"date":  "8/15/20",
-		"tags":  "Examples, Other Stuff",
-		"body":  "This is the example body",
+		"title":    "Example",
+		"date":     "8/15/20",
+		"tags":     "Examples, Other Stuff",
+		"body":     "This is the example body",
+		"filepath": "documents/example.md",
 	}
 
 	post := NewPost(raw)
@@ -26,5 +27,9 @@ func TestNewPost(t *testing.T) {
 
 	if post.Body != "<p>This is the example body</p>" {
 		t.Errorf("expected body to be '<p>This is the example body</p>', got %s", post.Body)
+	}
+
+	if post.FilePath != "documents/example.md" {
+		t.Errorf("expected filepath to be 'documents/example.md', got %s", post.FilePath)
 	}
 }

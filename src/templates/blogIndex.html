@@ -2,6 +2,7 @@
   <h1 class="index-title">{{ .PageTitle }}</h1>
   {{ $prefix := .PathPrefix }}
 
+  {{ if len .Filters }}
   <ul class="filters">
   {{ range .Filters }}
     <li class="">
@@ -11,10 +12,16 @@
     </li>
   {{ end }}
   </ul>
+  {{ end }}
   <ul class="vertical-list">
   {{ range .Posts }}
     <li class="vertical-list__item">
       <div class="row">
+        {{ if ne .FilePath "" }}
+        <div class="download-icon">
+          <a href="{{ .FilePath }}">🎼</a>
+        </div>
+        {{ end }}
         <a href="{{ $prefix }}{{ .Slug }}" class="blog-link">{{ .Title }}</a>
         <div class="tags">
           {{ range .Tags }}
