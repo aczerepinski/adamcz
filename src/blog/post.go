@@ -21,6 +21,7 @@ type Post struct {
 	Composers    []string
 	Performers   []string
 	Slug         string
+	FilePath     string
 }
 
 // NewPost initializes a post from raw key/value pairs
@@ -37,6 +38,7 @@ func NewPost(raw map[string]string) *Post {
 		Composers:    cleanEmpty(strings.Split(raw["composers"], ", ")),
 		Performers:   cleanEmpty(strings.Split(raw["performers"], ", ")),
 		Slug:         prepareSlug(raw["title"]),
+		FilePath:     raw["filepath"],
 	}
 }
 
@@ -44,16 +46,23 @@ func NewPost(raw map[string]string) *Post {
 // music or tech blog posts
 func (p *Post) Summary() string {
 	if p.performedByComposer() {
-		return fmt.Sprintf("%s - composed and performed by %s",
-			p.Date.Format("1/2/06"), p.Composers[0])
+		return fmt.Sprintf("%scomposed and performed by %s",
+			p.formattedDate(), p.Composers[0])
 	}
 
 	if len(p.Composers) > 0 {
-		return fmt.Sprintf("%s - composed by %s, performed by %s",
-			p.Date.Format("1/2/06"), strings.Join(p.Composers, ", "),
+		return fmt.Sprintf("%scomposed by %s, performed by %s",
+			p.formattedDate(), strings.Join(p.Composers, ", "),
 			strings.Join(p.Performers, ", "))
 	}
-	return fmt.Sprintf("%s - %s", p.Date.Format("1/2/06"), p.Description)
+	return fmt.Sprintf("%s %s", p.formattedDate(), p.Description)
+}
+
+func (p *Post) formattedDate() string {
+	if p.Date.IsZero() {
+		return ""
+	}
+	return fmt.Sprintf("%s - ", p.Date.Format("1/2/06"))
 }
 
 func (p *Post) performedByComposer() bool {

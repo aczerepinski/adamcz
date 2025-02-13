@@ -23,6 +23,11 @@ func main() {
 		log.Fatalf("no music posts! %v", err)
 	}
 
+	transcriptions, err := blog.InitializeRepository("./transcriptions")
+	if err != nil {
+		log.Fatalf("no transcriptions! %v", err)
+	}
+
 	events, err := calendar.InitializeRepository("./events")
 	if err != nil {
 		log.Fatalf("no events! %v", err)
@@ -33,7 +38,7 @@ func main() {
 
 	version := time.Now().Format("20060102150405")
 
-	controller := web.NewController(version, techPosts, musicPosts, events)
+	controller := web.NewController(version, techPosts, musicPosts, transcriptions, events)
 	http.Handle("/", controller)
 
 	port := os.Getenv("PORT")

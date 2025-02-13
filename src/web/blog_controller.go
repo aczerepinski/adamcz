@@ -64,6 +64,19 @@ func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
 	c.templates["blogIndex"].Execute(w, data)
 }
 
+func (c *Controller) transcriptionsIndex(w http.ResponseWriter, r *http.Request) {
+	posts := c.transcriptions.GetAll(1, 10)
+	data := blogIndex{
+		CDN:        cdnHost,
+		Version:    c.version,
+		PageTitle:  "Transcriptions",
+		MetaTitle:  "adamcz | transcriptions",
+		PathPrefix: "/transcriptions/",
+		Posts:      posts,
+	}
+	c.templates["blogIndex"].Execute(w, data)
+}
+
 // techIndex serves a summary of all music posts
 func (c *Controller) techIndex(w http.ResponseWriter, r *http.Request) {
 	data := blogIndex{
@@ -92,6 +105,24 @@ func (c *Controller) musicShow(slug string, w http.ResponseWriter, r *http.Reque
 		Post:         post,
 		PathPrefix:   "/music/",
 		MoreLikeThis: c.musicPosts.GetRelateds(post, 3),
+	}
+
+	c.templates["blogShow"].Execute(w, data)
+}
+
+func (c *Controller) transcriptionsShow(slug string, w http.ResponseWriter, r *http.Request) {
+	post, err := c.transcriptions.GetBySlug(slug)
+	if err != nil {
+		c.notFound(w, r)
+		return
+	}
+
+	data := blogShow{
+		Version:    c.version,
+		PageTitle:  post.Title,
+		MetaTitle:  fmt.Sprintf("adamcz | %s", strings.ToLower(post.Title)),
+		Post:       post,
+		PathPrefix: "/transcriptions/",
 	}
 
 	c.templates["blogShow"].Execute(w, data)
