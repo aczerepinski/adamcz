@@ -21,3 +21,6 @@ Adam Czerepinski - bass
 Clay Lyons - alto saxophone
 Jordan Kowalski - drums
 Chris Mosley - guitar
+
+*** filepath ***
+/static/documents/czerepinskis_triangle_score.pdf
