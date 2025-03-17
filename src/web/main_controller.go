@@ -8,6 +8,7 @@ import (
 
 	"github.com/aczerepinski/adamcz/src/blog"
 	"github.com/aczerepinski/adamcz/src/calendar"
+	"github.com/aczerepinski/adamcz/src/project"
 )
 
 // Controller handles routed requests
@@ -15,19 +16,21 @@ type Controller struct {
 	techPosts      *blog.Repository
 	musicPosts     *blog.Repository
 	transcriptions *blog.Repository
+	projects       map[string]project.Project
 	events         *calendar.Repository
 	templates      map[string]*template.Template
 	version        string
 }
 
 // NewController returns an initialized controller
-func NewController(version string, techPosts, musicPosts, transcriptions *blog.Repository, events *calendar.Repository) *Controller {
+func NewController(version string, techPosts, musicPosts, transcriptions *blog.Repository, events *calendar.Repository, projects map[string]project.Project) *Controller {
 	return &Controller{
 		version:        version,
 		techPosts:      techPosts,
 		musicPosts:     musicPosts,
 		transcriptions: transcriptions,
 		events:         events,
+		projects:       projects,
 		templates:      initTemplates(),
 	}
 }
@@ -44,6 +47,8 @@ func (c *Controller) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		c.transcriptionRouter(w, r)
 	case "calendar":
 		c.calendarRouter(w, r)
+	case "projects":
+		c.projectRouter(w, r)
 	default:
 		c.pageHandler(head, w, r)
 	}
@@ -139,14 +144,17 @@ func initTemplates() map[string]*template.Template {
 		fmt.Sprintf("%scalendarIndex.html", root),
 		fmt.Sprintf("%sevent.html", root)))
 
-	resume := template.Must(template.ParseFiles(
-		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sresume.html", root)))
-
 	home := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%shome.html", root)))
 
 	photos := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sphotos.html", root)))
+
+	projectShow := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sprojectShow.html", root)))
+
+	resume := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sresume.html", root)))
 
 	return map[string]*template.Template{
 		"bio":           bio,
@@ -156,5 +164,6 @@ func initTemplates() map[string]*template.Template {
 		"home":          home,
 		"photos":        photos,
 		"resume":        resume,
+		"projectShow":   projectShow,
 	}
 }

@@ -16,6 +16,9 @@ https://www.youtube.com/watch?v=SnGjxYdS3uQ
 *** tags ***
 piano
 
+*** project ***
+piano-trio
+
 *** body ***
 Composed & performed by Adam Czerepinski
 
