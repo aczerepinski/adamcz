@@ -1,0 +1,26 @@
+{{ define "page" }}
+  {{ if eq "" .Project.LogoURL }}
+  <h1 class="show-title">{{ .Project.Name }}</h1>
+  {{ end }}
+
+  {{ if ne "" .Project.LogoURL }}
+  <section class="project-logo">
+    <picture>
+      <img src="{{.CDN }}{{ .Project.LogoURL }}" alt="{{ .Project.Name }} logo">
+    </picture>
+  </section>
+  {{ end }}
+
+  <div class="summary project-description">
+    {{ .Project.Description }}
+  </div>
+
+  <section class="project-videos">
+    {{ range .Project.YouTubeURLs }}
+    <div class="youtube-embed">
+      <iframe width="672" height="378" src="{{ . }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  {{ end }}
+  </section>
+
+{{ end }}

@@ -459,6 +459,26 @@ code.inline {
   background-color: var(--cream);
 }
 
+.project-videos .youtube-embed {
+  margin-bottom: 4rem;
+}
+
+.project-logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.project-logo picture {
+  max-width: 30rem;
+}
+
+.project-description {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
 .photo-grid {
   align-items: flex-end;
   display: flex;

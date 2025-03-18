@@ -9,6 +9,7 @@ import (
 
 	"github.com/aczerepinski/adamcz/src/blog"
 	"github.com/aczerepinski/adamcz/src/calendar"
+	"github.com/aczerepinski/adamcz/src/project"
 	"github.com/aczerepinski/adamcz/src/web"
 )
 
@@ -33,12 +34,14 @@ func main() {
 		log.Fatalf("no events! %v", err)
 	}
 
+	projects := project.InitProjects(musicPosts.GetAll(1, 10))
+
 	fs := http.FileServer(http.Dir("./static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	version := time.Now().Format("20060102150405")
 
-	controller := web.NewController(version, techPosts, musicPosts, transcriptions, events)
+	controller := web.NewController(version, techPosts, musicPosts, transcriptions, events, projects)
 	http.Handle("/", controller)
 
 	port := os.Getenv("PORT")

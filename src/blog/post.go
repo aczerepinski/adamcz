@@ -22,6 +22,7 @@ type Post struct {
 	Performers   []string
 	Slug         string
 	FilePath     string
+	Project      string
 }
 
 // NewPost initializes a post from raw key/value pairs
@@ -39,6 +40,7 @@ func NewPost(raw map[string]string) *Post {
 		Performers:   cleanEmpty(strings.Split(raw["performers"], ", ")),
 		Slug:         prepareSlug(raw["title"]),
 		FilePath:     raw["filepath"],
+		Project:      raw["project"],
 	}
 }
 
