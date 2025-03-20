@@ -39,9 +39,23 @@
         "bandName": "Charlie Painter Trio",
         "performers": [
             "Charlie Painter - guitar",
-            "t/b/d - drums"
+            "Noah Brooks - drums"
         ]
     },
+    {
+        "date": "2025-03-25T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    }
     {
         "date": "2025-04-24T19:00:00.000Z",
         "instruments": ["piano"],
@@ -68,6 +82,24 @@
         "performers": [
             "Charlie Painter - guitar",
             "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2025-06-29T15:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "2513 Seiferth Rd",
+            "name": "Red Rooster",
+            "url": "https://redroostermadison.com"
+        },
+        "bandName": "Hornado",
+        "performers": [
+            "Jim Doherty - trumpet",
+            "Pawan Benjamin - alto saxophone",
+            "Jon Hoel - tenor saxophone",
+            "Max Brown - trombone",
+            "Jordan Cohen - drums",
+            "Chris Mosley - guitar"
         ]
     }
 ]
