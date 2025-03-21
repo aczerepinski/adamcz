@@ -11,6 +11,7 @@ type Event struct {
 	Date        time.Time
 	Venue       Venue
 	Performers  []string
+	Featured    bool
 }
 
 func (e *Event) DateAndTime() string {

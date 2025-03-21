@@ -1,5 +1,5 @@
 {{ define "event" }}
-<li class="vertical-list__item event">
+<li class="vertical-list__item event {{ if .Featured }}event--featured{{ end }}">
   <div class="row">
     <div class="tags">
       {{ range .Instruments }}

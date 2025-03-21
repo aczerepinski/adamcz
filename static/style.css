@@ -385,6 +385,10 @@ article {
   padding: 1rem;
 }
 
+.event.event--featured {
+  border: 2px solid black;
+}
+
 .summary {
   font: 300 1.6rem var(--slabo);
   text-transform: initial;

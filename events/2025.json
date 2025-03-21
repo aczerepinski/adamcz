@@ -64,11 +64,12 @@
             "name": "North Street Cafe",
             "url": "https://www.northstreetcabaret.com/events/2025/4/24/adam-czerepinski-pawan-benjamin-amp-john-christensen"
         },
-        "bandName": "Adam Czerepinski Trio",
+        "bandName": "🎹 Adam Czerepinski Piano Trio 🎹",
         "performers": [
             "Pawan Benjamin - tenor saxophone",
             "John Christensen - bass"
-        ]
+        ],
+        "featured": true
     },
     {
         "date": "2025-04-29T20:00:00.000Z",
@@ -92,7 +93,7 @@
             "name": "Red Rooster",
             "url": "https://redroostermadison.com"
         },
-        "bandName": "Hornado",
+        "bandName": "🌪️🎺 Hornado 🎷🌪️",
         "performers": [
             "Jim Doherty - trumpet",
             "Pawan Benjamin - alto saxophone",
@@ -100,6 +101,7 @@
             "Max Brown - trombone",
             "Jordan Cohen - drums",
             "Chris Mosley - guitar"
-        ]
+        ],
+        "featured": true
     }
 ]
