@@ -21,3 +21,10 @@ func (e *Event) DateAndTime() string {
 
 	return e.Date.Format(layout)
 }
+
+func (e *Event) DayOfWeek() string {
+	if e.Date.IsZero() {
+		return ""
+	}
+	return e.Date.Weekday().String()
+}
