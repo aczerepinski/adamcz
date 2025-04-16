@@ -57,6 +57,21 @@
         ]
     },
     {
+        "date": "2025-04-13T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone",
+            "Arno Gonzalez - percussion"
+        ]
+    },
+    {
         "date": "2025-04-24T19:00:00.000Z",
         "instruments": ["piano"],
         "venue": {
@@ -103,5 +118,20 @@
             "Chris Mosley - guitar"
         ],
         "featured": true
+    },
+    {
+        "date": "2025-07-02T20:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "101 King St",
+            "name": "Lucille",
+            "url": "https://www.lucillemadison.com/event-details/live-lucille-the-wayne-salzmann-quartet"
+        },
+        "bandName": "Chris Mosley Quartet",
+        "performers": [
+            "Chris Mosley - guitar",
+            "Wayne Salzmann - drums",
+            "John Mesoloras - bass"
+        ]
     }
 ]
