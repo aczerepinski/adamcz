@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-type emailListFormData struct {
+type emailListData struct {
 	CDN       string
 	Version   string
 	MetaTitle string
@@ -12,7 +12,7 @@ type emailListFormData struct {
 
 // RenderSubscriptionForm renders the signup form (GET)
 func (c *Controller) RenderSubscriptionForm(w http.ResponseWriter, r *http.Request) {
-	data := emailListFormData{
+	data := emailListData{
 		CDN:       cdnHost,
 		Version:   c.version,
 		MetaTitle: "adamcz | subscribe",
