@@ -453,39 +453,6 @@ article {
 
 .email-list-form {
   margin: 4rem auto;
-  max-width: 60rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input[type="text"], input[type="email"] {
-  border: 0;
-  border-bottom: 2px solid var(--grey);
-  box-shadow: none;
-  font: 300 3rem var(--slabo);
-  height: 3rem;
-  margin: 2rem 0;
-  width: 100%;
-}
-
-button {
-  background-color: var(--grey);
-  border: none;
-  color: white;
-  font: 300 2.2rem var(--oswald);
-  letter-spacing: 1px;
-  padding: 1rem;
-  position: relative;
-  text-transform: uppercase;
-}
-
-button:hover {
-  background-color: var(--gold);
-  cursor: pointer;
 }
 
 pre {
