@@ -49,9 +49,27 @@ func (c *Controller) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		c.calendarRouter(w, r)
 	case "projects":
 		c.projectRouter(w, r)
+	case "email-list":
+		c.emailListRouter(w, r)
 	default:
 		c.pageHandler(head, w, r)
 	}
+}
+
+// emailListRouter handles /email-list GET and POST
+func (c *Controller) emailListRouter(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "" || r.URL.Path == "/" {
+		switch r.Method {
+		case http.MethodGet:
+			c.RenderSubscriptionForm(w, r)
+		case http.MethodPost:
+			c.ProcessSubscription(w, r)
+		default:
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		}
+		return
+	}
+	c.notFound(w, r)
 }
 
 func (c *Controller) musicRouter(w http.ResponseWriter, r *http.Request) {
@@ -153,6 +171,9 @@ func initTemplates() map[string]*template.Template {
 	projectShow := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sprojectShow.html", root)))
 
+	emailList := template.Must(template.ParseFiles(
+		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%semailList.html", root)))
+
 	resume := template.Must(template.ParseFiles(
 		fmt.Sprintf("%slayout.html", root), fmt.Sprintf("%sresume.html", root)))
 
@@ -165,5 +186,6 @@ func initTemplates() map[string]*template.Template {
 		"photos":        photos,
 		"resume":        resume,
 		"projectShow":   projectShow,
+		"emailList":     emailList,
 	}
 }
