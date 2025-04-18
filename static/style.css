@@ -451,6 +451,10 @@ article {
   border: 2px solid var(--grey);
 }
 
+.email-list-form {
+  margin: 4rem auto;
+}
+
 pre {
   font-family: var(--sourceCode);
 }
