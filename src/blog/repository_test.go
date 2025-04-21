@@ -7,7 +7,7 @@ func TestGetBy(t *testing.T) {
 		tags        []string
 		expectedLen int
 	}{
-		{[]string{"trumpet"}, 2},
+		{[]string{"trumpet"}, 3},
 		{[]string{"piano"}, 2},
 		{[]string{"trumpet", "piano"}, 1},
 	}
@@ -21,20 +21,35 @@ func TestGetBy(t *testing.T) {
 	}
 }
 
+func TestGetRelateds(t *testing.T) {
+	repo := testRepo()
+	relateds := repo.GetRelateds(repo.posts[0], 1)
+	if len(relateds) != 1 {
+		t.Errorf("expected 1 related post, got %d", len(relateds))
+	}
+	if relateds[0].Title != "trumpet 2" {
+		t.Errorf("expected related to be trumpet 2 because they have the same tags, got '%s'", relateds[0].Title)
+	}
+}
+
 func testRepo() Repository {
 	return Repository{
 		posts: []*Post{
-			&Post{
+			{
 				Title: "trumpet",
 				Tags:  []string{"trumpet"},
 			},
-			&Post{
+			{
 				Title: "trumpet & piano",
 				Tags:  []string{"trumpet", "piano"},
 			},
-			&Post{
+			{
 				Title: "piano",
 				Tags:  []string{"piano"},
+			},
+			{
+				Title: "trumpet 2",
+				Tags:  []string{"trumpet"},
 			},
 		},
 	}

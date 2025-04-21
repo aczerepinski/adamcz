@@ -130,9 +130,6 @@ func contains(posts []*Post, p *Post) bool {
 
 func similarityScore(a *Post, b *Post) int {
 	var score int
-	if a.Composers[0] == b.Composers[0] {
-		score += 7
-	}
 	if len(a.Tags) == len(b.Tags) {
 		score += 3
 	}
@@ -143,6 +140,12 @@ func similarityScore(a *Post, b *Post) int {
 				break
 			}
 		}
+	}
+	if len(a.Composers) == 0 || len(b.Composers) == 0 {
+		return score
+	}
+	if a.Composers[0] == b.Composers[0] {
+		score += 7
 	}
 	return score
 }
