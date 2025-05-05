@@ -508,7 +508,7 @@ code.inline {
 
 .photo-grid .image--landscape {
   height: auto;
-  width: 400px;
+  width: calc(50% - 1rem);
 }
 
 .photo-grid .image--portrait img {
