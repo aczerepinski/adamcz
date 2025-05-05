@@ -3,11 +3,21 @@ package project
 import "github.com/aczerepinski/adamcz/src/blog"
 
 type Project struct {
-	Name        string
-	Slug        string
-	LogoURL     string
-	Description string
-	YouTubeURLs []string
+	Name         string
+	Slug         string
+	LogoURL      string
+	PrimaryPhoto ProjectPhoto
+	Description  string
+	YouTubeURLs  []string
+}
+
+type ProjectPhoto struct {
+	Url          string
+	Photographer string
+}
+
+func (p ProjectPhoto) Empty() bool {
+	return p.Url == "" && p.Photographer == ""
 }
 
 func InitProjects(allVideos []*blog.Post) map[string]Project {
@@ -24,10 +34,14 @@ func InitProjects(allVideos []*blog.Post) map[string]Project {
 		"piano-trio": {
 			Name: "Adam Czerepinski Piano Trio",
 			Slug: "piano-trio",
-			Description: "Multi-instrumentalist Adam Czerepinski's piano trio is his primary outlet for exploring his original instrument - the piano. " +
+			Description: "Multi-instrumentalist Adam Czerepinski's trio is his primary outlet for exploring his original instrument - the piano. " +
 				"In addition to Adam's original compositions, the trio explores popular music from the past twenty years. " +
 				"The band's songbook includes covers of OutKast, Thundercat, The Smile, Chris Stapleton, Hiatus Kaiyote, Sufjan Stevens, and more.",
 			YouTubeURLs: []string{},
+			PrimaryPhoto: ProjectPhoto{
+				Url:          "/static/images/piano_trio_primary.jpg",
+				Photographer: "Kristin Shafel",
+			},
 		},
 	}
 

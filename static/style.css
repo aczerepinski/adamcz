@@ -519,6 +519,13 @@ code.inline {
   height: 100%;
 }
 
+.project-primary-photo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 .image-wrapper {
   display: flex;
   flex-direction: column;
