@@ -18,7 +18,7 @@
   {{ if not .Project.PrimaryPhoto.Empty }}
   <section class="project-primary-photo">
     <picture class="image image--landscape" data-photo-credit="{{ .Project.PrimaryPhoto.Photographer }}">
-      <img src="{{ .Project.PrimaryPhoto.Url }}" alt="{{ .Project.Name }}">
+      <img src="{{.CDN }}{{ .Project.PrimaryPhoto.Url }}" alt="{{ .Project.Name }}">
     </picture>
   </section>
   {{ end }}
