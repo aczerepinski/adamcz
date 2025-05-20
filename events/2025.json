@@ -129,6 +129,20 @@
         ]
     },
     {
+        "date": "2025-06-19T17:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "224 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://theohiotavern.com/home/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Jordan Kowalski - drums"
+        ]
+    },
+    {
         "date": "2025-06-29T15:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
