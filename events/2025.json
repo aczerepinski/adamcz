@@ -143,6 +143,20 @@
         ]
     },
     {
+        "date": "2025-06-27T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "317 S Division St, Stoughton, WI",
+            "name": "Argo Craft Tavern",
+            "url": "https://argocrafttavern.com"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "TBD - drums"
+        ]
+    },
+    {
         "date": "2025-06-29T15:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
