@@ -287,6 +287,10 @@ article {
   background-color: var(--gold);
 }
 
+.tag.organ, .filter.organ:hover, .filter--active.organ {
+  background-color: #960018;
+}
+
 .filter.rhodes:hover, .filter--active.rhodes {
   background-color: black;
 }

@@ -203,5 +203,52 @@
             "Wayne Salzmann - drums",
             "John Mesoloras - bass"
         ]
+    },
+    {
+        "date": "2025-09-02T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2025-09-09T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2025-11-01T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1224 Williamson St",
+            "name": "Cafe Coda",
+            "url": "https://cafecoda.club"
+        },
+        "bandName": "🌪️🎺 Hornado 🎷🌪️",
+        "performers": [
+            "Jim Doherty - trumpet",
+            "Austin Cebulske - alto saxophone",
+            "Jon Hoel - tenor saxophone",
+            "Darren Sterud - trombone",
+            "Noah Brooks - drums",
+            "Chris Mosley - guitar"
+        ],
+        "featured": true
     }
 ]
