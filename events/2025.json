@@ -233,7 +233,21 @@
         ]
     },
     {
-        "date": "2025-11-01T20:00:00.000Z",
+        "date": "2025-10-07T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2025-11-22T19:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
             "address": "1224 Williamson St",
