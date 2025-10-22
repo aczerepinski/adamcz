@@ -247,6 +247,19 @@
         ]
     },
     {
+        "date": "2025-11-07T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "364 US-51, Stoughton",
+            "name": "Old Firehouse Lounge",
+            "url": "https://www.oldfirehouselounge.com"
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    },
+    {
         "date": "2025-11-22T19:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
@@ -264,5 +277,19 @@
             "Chris Mosley - guitar"
         ],
         "featured": true
+    },
+    {
+        "date": "2025-11-25T20:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1380 Williamson St",
+            "name": "Gib's",
+            "url": "https://www.gibs.bar"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
     }
 ]
