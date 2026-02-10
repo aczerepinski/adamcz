@@ -1,0 +1,15 @@
+[
+    {
+        "date": "2026-02-26T18:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "2001 Atwood Ave",
+            "name": "The Green Room Public House",
+            "url": "https://www.greenroommadison.com/events"
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    }
+]
