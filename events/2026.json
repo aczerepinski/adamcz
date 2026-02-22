@@ -1,5 +1,19 @@
 [
     {
+        "date": "2026-02-15T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone"
+        ]
+    },
+    {
         "date": "2026-02-26T18:30:00.000Z",
         "instruments": ["bass"],
         "venue": {
@@ -11,5 +25,38 @@
         "performers": [
             "Charlie Painter - guitar"
         ]
+    },
+    {
+        "date": "2026-03-22T18:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "610 North St",
+            "name": "North Street Cabaret",
+            "url": "https://www.northstreetcabaret.com/events"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2026-08-12T17:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "WI State Capital",
+            "name": "Jazz at Five",
+            "url": "https://jazzatfive.org"
+        },
+        "bandName": "🌪️🎺 Hornado 🎷🌪️",
+        "performers": [
+            "Jim Doherty - trumpet",
+            "Pawan Benjamin - alto saxophone",
+            "Jon Hoel - tenor saxophone",
+            "Max Brown - trombone",
+            "Noah Brooks - drums",
+            "Chris Mosley - guitar"
+        ],
+        "featured": true
     }
 ]
