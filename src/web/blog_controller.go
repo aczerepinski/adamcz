@@ -23,13 +23,14 @@ func (f filter) Status() string {
 }
 
 type blogIndex struct {
-	CDN        string
-	Version    string
-	PageTitle  string
-	MetaTitle  string
-	PathPrefix string
-	Posts      []*blog.Post
-	Filters    []filter
+	CDN             string
+	Version         string
+	PageTitle       string
+	MetaTitle       string
+	PathPrefix      string
+	Posts           []*blog.Post
+	InstrumentFilters []filter
+	ComposerFilters   []filter
 }
 
 type blogShow struct {
@@ -44,22 +45,25 @@ type blogShow struct {
 
 // musicIndex serves a summary of all music posts
 func (c *Controller) musicIndex(w http.ResponseWriter, r *http.Request) {
-	var posts []*blog.Post
 	instruments := getParam("instruments", r)
-	if len(instruments) > 0 {
-		posts = c.musicPosts.GetBy(instruments)
+	composers := getParam("composers", r)
+
+	var posts []*blog.Post
+	if len(instruments) > 0 || len(composers) > 0 {
+		posts = c.musicPosts.GetBy(blog.Query{Instruments: instruments, Composers: composers})
 	} else {
 		posts = c.musicPosts.GetAll(1, 10)
 	}
 
 	data := blogIndex{
-		CDN:        cdnHost,
-		Version:    c.version,
-		PageTitle:  "Videos",
-		MetaTitle:  "adamcz | videos",
-		PathPrefix: "/music/",
-		Posts:      posts,
-		Filters:    musicFilters(instruments),
+		CDN:               cdnHost,
+		Version:           c.version,
+		PageTitle:         "Videos",
+		MetaTitle:         "adamcz | videos",
+		PathPrefix:        "/music/",
+		Posts:             posts,
+		InstrumentFilters: musicFilters(instruments, composers),
+		ComposerFilters:   composerFilters(composers, instruments),
 	}
 	c.templates["blogIndex"].Execute(w, data)
 }

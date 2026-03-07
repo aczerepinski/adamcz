@@ -2,9 +2,9 @@
   <h1 class="index-title">{{ .PageTitle }}</h1>
   {{ $prefix := .PathPrefix }}
 
-  {{ if len .Filters }}
-  <ul class="filters">
-  {{ range .Filters }}
+  {{ if len .ComposerFilters }}
+  <ul class="filters filters--composer">
+  {{ range .ComposerFilters }}
     <li class="">
       <a href="{{ .Path }}">
         <span class="filter filter--{{ .Status }} {{ .Name }}">{{ .Name}} </span>
@@ -12,6 +12,21 @@
     </li>
   {{ end }}
   </ul>
+  {{ end }}
+
+  {{ if len .InstrumentFilters }}
+  <ul class="filters filters--instrument">
+  {{ range .InstrumentFilters }}
+    <li class="">
+      <a href="{{ .Path }}">
+        <span class="filter filter--{{ .Status }} {{ .Name }}">{{ .Name}} </span>
+      </a>
+    </li>
+  {{ end }}
+  </ul>
+  {{ end }}
+  {{ if not .Posts }}
+  <p>No songs match the filters you selected</p>
   {{ end }}
   <ul class="vertical-list">
   {{ range .Posts }}
