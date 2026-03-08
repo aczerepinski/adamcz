@@ -194,13 +194,35 @@ article {
 
 .filters {
   align-items: center;
-  border-bottom: 1px solid var(--grey);
   display: flex;
   flex-direction: row;
   height: 3.5rem;
   justify-content: space-between;
   margin-top: 0.5rem;
   padding-bottom: 1rem;
+}
+
+.filters--instrument {
+  border-bottom: 1px solid var(--grey);
+}
+
+@media(max-width: 800px) {
+  .filters--instrument {
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 0;
+    row-gap: 5px;
+  }
+
+  .filters--instrument li {
+    flex: 0 0 25%;
+    padding-bottom: 1rem;
+  }
+}
+
+.filters--composer {
+  justify-content: center;
+  gap: 20px;
 }
 
 .filter {
@@ -221,6 +243,10 @@ article {
 
 .filter.filter--active {
   color: white;
+}
+
+.filter--active.originals, .filter--active.covers {
+  background-color: black;
 }
 
 .tag-list {

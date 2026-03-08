@@ -56,20 +56,62 @@ func (r *Repository) GetAll(page, perPage int) []*Post {
 	return r.posts
 }
 
-// GetBy returns posts that contain a matching tag for ALL query terms
-func (r *Repository) GetBy(query []string) []*Post {
+// Query holds filter criteria for repository lookups.
+// A "!" prefix on any value means "exclude posts matching this value".
+type Query struct {
+	Instruments []string
+	Composers   []string
+}
+
+// NegationOperator is the prefix used to exclude values in a Query.
+const NegationOperator = "!"
+
+// GetBy returns posts satisfying all constraints in the query.
+// Instrument terms are matched against post Tags; composer terms against post Composers.
+func (r *Repository) GetBy(q Query) []*Post {
 	var posts []*Post
 outer:
 	for _, post := range r.posts {
-		for _, searchTerm := range query {
-			found := false
-			for _, postTag := range post.Tags {
-				if postTag == searchTerm {
-					found = true
+		for _, instrument := range q.Instruments {
+			if strings.HasPrefix(instrument, NegationOperator) {
+				val := instrument[len(NegationOperator):]
+				for _, tag := range post.Tags {
+					if tag == val {
+						continue outer
+					}
+				}
+			} else {
+				found := false
+				for _, tag := range post.Tags {
+					if tag == instrument {
+						found = true
+						break
+					}
+				}
+				if !found {
+					continue outer
 				}
 			}
-			if !found {
-				continue outer
+		}
+		for _, composer := range q.Composers {
+			if strings.HasPrefix(composer, NegationOperator) {
+				val := composer[len(NegationOperator):]
+				for _, c := range post.Composers {
+					if c == val {
+						continue outer
+					}
+				}
+			} else {
+				found := false
+				for _, c := range post.Composers {
+					if c == composer {
+						found = true
+						break
+					}
+				}
+				if !found {
+					continue outer
+				}
 			}
 		}
 		posts = append(posts, post)
