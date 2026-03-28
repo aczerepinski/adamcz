@@ -41,6 +41,33 @@
         ]
     },
     {
+        "date": "2026-04-17T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "364 US-51, Stoughton",
+            "name": "Old Firehouse Lounge",
+            "url": "https://www.oldfirehouselounge.com"
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    },
+    {
+        "date": "2026-06-26T19:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "6250 Nesbitt Rd, Fitchburg",
+            "name": "Yahara Bay Distillers",
+            "url": "https://yaharabay.com"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
         "date": "2026-08-12T17:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
