@@ -245,8 +245,8 @@ article {
   color: white;
 }
 
-.filter--active.originals, .filter--active.covers {
-  background-color: black;
+.filter--active.originals, .filter--active.covers, .filter.originals:hover, .filter.covers:hover {
+  background-color: #222;
 }
 
 .tag-list {

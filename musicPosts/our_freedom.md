@@ -1,0 +1,30 @@
+*** title ***
+Our Freedom
+
+*** composers ***
+Adam Czerepinski, Pawan Benjamin, John Christensen
+
+*** performers ***
+Adam Czerepinski, Pawan Benjamin, John Christensen
+
+*** date ***
+4/13/26
+
+*** youtube ***
+https://www.youtube.com/watch?v=x6oZ11wViOU
+
+*** tags ***
+piano
+
+*** body ***
+Adam Czerepinski - piano
+
+Pawan Benjamin - tenor saxophone
+
+John Christensen - bass
+
+Gear used:
+
+- Estonia 190 Piano
+
+- Microphones: Beyer m160 (x2), AEA R84, Royer R-10
