@@ -31,3 +31,6 @@ Gear used:
 - Estonia 190 Piano
 
 - Microphones: Beyer m160 (x2), AEA R84, Royer R-10
+
+*** filepath ***
+/static/documents/eternity_score.pdf
