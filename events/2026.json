@@ -55,17 +55,30 @@
         ]
     },
     {
-        "date": "2026-06-26T19:00:00.000Z",
+        "date": "2026-05-22T16:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
-            "address": "6250 Nesbitt Rd, Fitchburg",
-            "name": "Yahara Bay Distillers",
-            "url": "https://yaharabay.com"
+            "address": "800 Langdon St",
+            "name": "Memorial Union Terrace",
+            "url": "https://www.greenroommadison.com/events"
         },
         "bandName": "Charlie Painter Trio",
         "performers": [
             "Charlie Painter - guitar",
             "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2026-05-28T18:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "2001 Atwood Ave",
+            "name": "The Green Room Public House",
+            "url": "https://www.greenroommadison.com/events"
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
         ]
     },
     {
