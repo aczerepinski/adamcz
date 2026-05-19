@@ -82,6 +82,21 @@
         ]
     },
     {
+        "date": "2026-06-27T11:00:00.000Z",
+        "instruments": ["rhodes"],
+        "venue": {
+            "address": "Droster Rd, Madison WI",
+            "name": "Elvehjem Neighborhood Party",
+            "url": "https://www.jonathanhoel.com"
+        },
+        "bandName": "Jon Hoel Quartet",
+        "performers": [
+            "Jon Hoel - tenor saxophone",
+            "Ben Ferris - bass",
+            "Kelby Kryshak - drums"
+        ]
+    },
+    {
         "date": "2026-08-12T17:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
