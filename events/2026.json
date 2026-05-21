@@ -97,6 +97,32 @@
         ]
     },
     {
+        "date": "2026-07-17T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "5441 High Crossing Blvd",
+            "name": "Pooley's",
+            "url": "https://pooleysmadison.com/"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    },
+    {
+        "date": "2026-07-30T18:30:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "2001 Atwood Ave",
+            "name": "The Green Room Public House",
+            "url": "https://www.greenroommadison.com/events"
+        },
+        "bandName": "Charlie Painter Duo",
+        "performers": [
+            "Charlie Painter - guitar"
+        ]
+    },
+    {
         "date": "2026-08-12T17:00:00.000Z",
         "instruments": ["bass"],
         "venue": {
