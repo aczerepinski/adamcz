@@ -110,6 +110,20 @@
         ]
     },
     {
+        "date": "2026-07-26T09:15:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "1904 Winnebago St",
+            "name": "Trinity Lutheran Church",
+            "url": "https://tlcmsn.org/about/"
+        },
+        "bandName": "Global Service",
+        "performers": [
+            "Wendy Ward - piano",
+            "Anders Svanoe - tenor saxophone"
+        ]
+    },
+    {
         "date": "2026-07-30T18:30:00.000Z",
         "instruments": ["bass"],
         "venue": {
@@ -120,6 +134,20 @@
         "bandName": "Charlie Painter Duo",
         "performers": [
             "Charlie Painter - guitar"
+        ]
+    },
+    {
+        "date": "2026-08-06T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "204 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://www.greenroommadison.com/events"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
         ]
     },
     {
