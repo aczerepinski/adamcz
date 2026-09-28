@@ -173,8 +173,8 @@
         "date": "2026-10-08T19:00:00.000Z",
         "instruments": ["organ"],
         "venue": {
-            "address": "Minocqua Brewing Company",
-            "name": "2927 E Washington Ave",
+            "address": "2927 E Washington Ave",
+            "name": "Minocqua Brewing Company",
             "url": "https://www.minocquabrewingcompany.com"
         },
         "bandName": "Austin Cebulske Duo",
