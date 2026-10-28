@@ -60,7 +60,7 @@
         "venue": {
             "address": "800 Langdon St",
             "name": "Memorial Union Terrace",
-            "url": "https://www.greenroommadison.com/events"
+            "url": ""
         },
         "bandName": "Charlie Painter Trio",
         "performers": [
@@ -142,7 +142,7 @@
         "venue": {
             "address": "204 Ohio Ave",
             "name": "Ohio Tavern",
-            "url": "https://www.greenroommadison.com/events"
+            "url": "https://www.theohiotavern.com"
         },
         "bandName": "Charlie Painter Trio",
         "performers": [
@@ -180,6 +180,34 @@
         "bandName": "Austin Cebulske Duo",
         "performers": [
             "Austin Cebulske - tenor saxophone"
+        ]
+    },
+    {
+        "date": "2026-10-15T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "204 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://www.theohiotavern.com"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
+        ]
+    },
+    {
+        "date": "2026-11-05T18:00:00.000Z",
+        "instruments": ["bass"],
+        "venue": {
+            "address": "204 Ohio Ave",
+            "name": "Ohio Tavern",
+            "url": "https://www.theohiotavern.com"
+        },
+        "bandName": "Charlie Painter Trio",
+        "performers": [
+            "Charlie Painter - guitar",
+            "Noah Brooks - drums"
         ]
     }
 ]
